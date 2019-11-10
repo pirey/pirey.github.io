@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Redux and react is a separate libraries. They don’t know each other (internally). When we store data in redux and want to use that data in react component, we have to somewhat “connect” them. Let’s sa">
+<meta name="keywords" content="javascript,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Making sense of using Redux in React">
+<meta property="og:url" content="http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/index.html">
+<meta property="og:site_name" content="Tic Tech Toe">
+<meta property="og:description" content="Redux and react is a separate libraries. They don’t know each other (internally). When we store data in redux and want to use that data in react component, we have to somewhat “connect” them. Let’s sa">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-10T06:24:24.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Making sense of using Redux in React">
+<meta name="twitter:description" content="Redux and react is a separate libraries. They don’t know each other (internally). When we store data in redux and want to use that data in react component, we have to somewhat “connect” them. Let’s sa">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/android-icon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+          
+        
+    
+    <!-- title -->
+    <title>Making sense of using Redux in React</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/06/13/git-intro/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/12/05/clearing-confusion-prettier-vs-linters/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&text=Making sense of using Redux in React"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&is_video=false&description=Making sense of using Redux in React"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Making sense of using Redux in React&body=Check out this article: http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&name=Making sense of using Redux in React&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Making sense of using Redux in React
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Tic Tech Toe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-01-28T11:56:07.000Z" itemprop="datePublished">2019-01-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>, <a class="tag-link" href="/tags/react/">react</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Redux and react is a separate libraries. They don’t know each other (internally). When we store data in redux and want to use that data in react component, we have to somewhat “connect” them.</p>
+<p>Let’s say we have this component that use redux state</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createStore&#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducer'</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer)</span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> ( &lt;div&gt;&#123;store.getState().username&#125;&lt;/div&gt; )</span><br><span class="line"></span><br><span class="line"><span class="comment">// somewhere in our code, we make a state update using dispatch</span></span><br><span class="line">store.dispatch(&#123; <span class="string">'LOGIN_ACTION'</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>Everytime the redux state is updated after we dispatch actions, react doesn’t know how to react (pun intended) to the changes, therefore the UI is not reflecting the current state. In order for react to be aware of the changes, we need a way to notify our component when the state is updated. That’s when we need <code>react-redux</code>, another library to <code>connect</code> them. The <code>react-redux</code> library provide wrapper component, <code>&lt;Provider /&gt;</code>, where we store the redux store (another pun intended) so that we can refer to it later in child components.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Provider&#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="keyword">import</span> &#123;createStore&#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducer'</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer)</span><br><span class="line">render(&lt;Provider store=&#123;store&#125;&gt;&lt;App /&gt;&lt;/Provider&gt;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// to make it simple, here's the shape of our state</span></span><br><span class="line">&#123; <span class="attr">isLoggedIn</span>: <span class="literal">true</span>, <span class="attr">username</span>: <span class="string">'Faye Valentine'</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Later, if we need to use the redux state, we will not call <code>getState()</code> manually anymore. Instead, we connect our component with redux using <code>connect()</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;connect&#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">const</span> App = <span class="function">(<span class="params">state</span>) =&gt;</span> (&lt;div&gt;Welcome, &#123;state.username&#125;&lt;/div&gt;)</span><br><span class="line"><span class="keyword">const</span> wrapComponentWithState = connect(<span class="function"><span class="params">state</span> =&gt;</span> state)</span><br><span class="line"><span class="keyword">const</span> AppWithState = wrapComponentWithState(App)</span><br></pre></td></tr></table></figure>
+
+<p>The <code>connect()</code> function receive a function as its first parameter. Using this function, we can tell redux which part of the state that we want to access. The return value of this function will be injected to the wrapped component as props. In the example above, we use <code>identity</code> function <code>state =&gt; state</code>, that means our wrapped component will receive our entire state as the props. But it’s up to define the shape, for example we can do this instead:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> wrapComponentWithState = connect(<span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        greeting: state.isLoggedIn ? <span class="string">`Hello, <span class="subst">$&#123;state.username&#125;</span>`</span> : <span class="string">'Hello, stranger'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ... and in our component we're no longer gain access of entire state,</span></span><br><span class="line"><span class="comment">// instead we only receive greeting as props</span></span><br><span class="line"><span class="keyword">const</span> App = <span class="function">(<span class="params">&#123; greeting &#125;</span>) =&gt;</span> &lt;div&gt;&#123;greeting&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>The <code>connect()</code> function returns a function, which will be used to wrap another component, so that the wrapped component can access the state as props, as we discuss above. By using this way, <code>react-redux</code> make sure that the props that is injected to the component will always in sync with the current redux state. Another thing we need to do with the redux state is a way to make a change. We can export the store instance that we pass to the <code>&lt;Provider /&gt;</code> component and import it wherever we needed and call <code>store.dispatch</code> to dispatch actions. But let’s be a good boy for a moment and follow the guide properly. The <code>connect()</code> also can receive second parameter, which is also a function. The purpose of this function is very similar to the first parameter, but instead of receiving state, it receives dispatch as parameter, so we can inject pre-baked dispatcher to our component.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">  username: state.username</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123;</span><br><span class="line">  doLogin: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    dispatch(&#123; <span class="attr">type</span>: <span class="string">'LOGIN_ACTION'</span> &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> wrapComponentWithState = connect(</span><br><span class="line">  mapStateToProps,</span><br><span class="line">  mapDispatchToProps</span><br><span class="line">)</span><br><span class="line"><span class="comment">// ... we can then access the dispatcher in our component</span></span><br><span class="line"><span class="keyword">const</span> App = <span class="function">(<span class="params">&#123; username, doLogin &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;button onClick=&#123;doLogin&#125;&gt;Login <span class="keyword">as</span> &#123;username&#125;&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+
+<p>In the example above, we call the first and second parameter as <code>mapStateToProps</code> and <code>mapDispatchToProps</code> because we “map” the redux state and dispatch to a shape which will be injected to the wrapped component as props. Another thing to note is that since <code>connect()</code> returns a function, we can immediately call the returning function and resulting a wrapped component. The <code>App</code> component is just a component that receive and display data, while <code>AppWithState</code> will contain the actual logic and actions.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> App = <span class="function">(<span class="params">&#123; value1, value2 &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;value1&#125; &#123;value2&#125;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const AppWithState = connect(</span></span><br><span class="line"><span class="regexp">  mapStateToProps,</span></span><br><span class="line"><span class="regexp">  mapDispatchToProps</span></span><br><span class="line"><span class="regexp">)(App)</span></span><br></pre></td></tr></table></figure>
+
+<p>So that’s how it is (i guess) why we use redux that way in react app.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&text=Making sense of using Redux in React"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&is_video=false&description=Making sense of using Redux in React"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Making sense of using Redux in React&body=Check out this article: http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&title=Making sense of using Redux in React"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yeripratama.com/2019/01/28/making-sense-of-using-redux-in-react/&name=Making sense of using Redux in React&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Yeri Pratama
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'yeripratama';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

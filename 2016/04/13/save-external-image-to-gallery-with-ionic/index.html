@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="A few days ago I need to implement a feature where the user can save some displayed image in ionic app to the device image gallery. In my case, it was an image displayed using html img tag with extern">
+<meta name="keywords" content="ionic,angularjs,cordova">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Save external image to gallery with ionic">
+<meta property="og:url" content="http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/index.html">
+<meta property="og:site_name" content="Tic Tech Toe">
+<meta property="og:description" content="A few days ago I need to implement a feature where the user can save some displayed image in ionic app to the device image gallery. In my case, it was an image displayed using html img tag with extern">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-10T06:24:24.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Save external image to gallery with ionic">
+<meta name="twitter:description" content="A few days ago I need to implement a feature where the user can save some displayed image in ionic app to the device image gallery. In my case, it was an image displayed using html img tag with extern">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/android-icon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+          
+        
+    
+    <!-- title -->
+    <title>Save external image to gallery with ionic</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/04/28/ios-app-distribution-workflow/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&text=Save external image to gallery with ionic"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&is_video=false&description=Save external image to gallery with ionic"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Save external image to gallery with ionic&body=Check out this article: http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&name=Save external image to gallery with ionic&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-number">1.</span> <span class="toc-text">Conclusion</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Save external image to gallery with ionic
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Tic Tech Toe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2016-04-13T14:06:15.000Z" itemprop="datePublished">2016-04-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/angularjs/">angularjs</a>, <a class="tag-link" href="/tags/cordova/">cordova</a>, <a class="tag-link" href="/tags/ionic/">ionic</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>A few days ago I need to implement a feature where the user can save some displayed image in ionic app to the device image gallery. In my case, it was an image displayed using html img tag with external source url. So all I need was some method to download that file. Though the task is simple, it’s been a-lot-of-browsing activity since it was my first time dealing with cordova plugin. Then I decided to write this post, to explain the steps needed and wrap it all up. Let’s begin. First we create an ionic project, and move to that directory</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ionic start saveimage blank</span><br><span class="line">cd saveimage</span><br></pre></td></tr></table></figure>
+
+<p>Then make sure we add appropriate platform <strong>Note:</strong> this tutorial is intended to work with android platform, since I have not successfully make it works on iOS.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># for android</span><br><span class="line">ionic platform add android</span><br></pre></td></tr></table></figure>
+
+<p>In this project we will use ngCordova for easier use of cordova plugin within ionic. To set it up you can download the source files from <a href="http://ngcordova.com" target="_blank" rel="noopener">their website</a> or you can simply download it via bower:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bower install ngCordova</span><br></pre></td></tr></table></figure>
+
+<p>If you don’t have bower installed just type the following command to install it.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g bower</span><br></pre></td></tr></table></figure>
+
+<p>And then include it in <code>www/index.html</code>. If you installed it via bower, you can find the source file in <code>www/lib/</code> directory. Or include the appropriate file if you donwload the source files from the ngcordova website.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/ngCordova/dist/ng-cordova.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"cordova.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Next we need to include the ngCordova into our module. Open <code>www/js/app.js</code> and add the following</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">angular.module(<span class="string">'myApp'</span>, [<span class="string">'ngCordova'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>For the actual action to download the file, we need to install the <a href="http://ngcordova.com/docs/plugins/fileTransfer/" target="_blank" rel="noopener">cordova file transfer plugin</a>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ionic plugin add cordova-plugin-file-transfer</span><br></pre></td></tr></table></figure>
+
+<p>The file transfer plugin does not automatically add the downloaded file to the gallery, so we need additional plugin to do it. Install plugin to refresh gallery.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ionic plugin add https://github.com/lotterfriends/refreshgallery</span><br></pre></td></tr></table></figure>
+
+<p>Note that without this plugin, we can still download the image file, but to make it available in the gallery, we have to reboot our device, and that’s kind of..inefficient. Ok, setup clear. Let’s make a test button to download the file. Don’t forget to associate the template with our controller. Put this in <code>www/index.html</code> </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-content</span> <span class="attr">class</span>=<span class="string">"padding"</span> <span class="attr">ng-controller</span>=<span class="string">"HomeCtrl"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"downloadImage()"</span> <span class="attr">class</span>=<span class="string">"button button-block button-positive"</span>&gt;</span></span><br><span class="line">  Download</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Now create the controller, and make a scope function. Add the following code in the <code>www/js/app.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">.controller(<span class="string">'HomeCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $cordovaFileTransfer</span>) </span>&#123;</span><br><span class="line">  $scope.downloadImage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> url = <span class="string">"http://ngcordova.com/img/ngcordova-logo.png"</span>,</span><br><span class="line">        filename = url.split(<span class="string">"/"</span>).pop(),</span><br><span class="line">        targetPath = cordova.file.externalRootDirectory \+ filename,</span><br><span class="line">        options = &#123;&#125;,</span><br><span class="line">        trustHosts = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    $cordovaFileTransfer.download(url, targetPath, options, trustHosts)</span><br><span class="line">      .then(</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">          alert(<span class="string">'Download success'</span>);</span><br><span class="line">          refreshMedia.refresh(targetPath);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">          alert(<span class="string">'Error: '</span> + <span class="built_in">JSON</span>.stringify(err));</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">progress</span>) </span>&#123;</span><br><span class="line">          <span class="comment">// progressing download...</span></span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>We add <code>$cordovaFileTransfer</code> as dependency to our controller. This is the service ngCordova provide to us. Then we call the <code>$cordovaFileTransfer.download()</code> method to download the file. The url parameter is the path to the file we want to download, and targetPath is the directory in the device to save our downloaded file.</p>
+<p>And..here is the part where I get lost I tried using <code>cordova.file.dataDirectory</code> but I can’t find the downloaded file anywhere on my device’s file browser let alone in the gallery, because apparently it points to private directory where the app is installed. Took me some times to realize it after exploring my android’s directories using <code>adb shell</code> command. Then, I finally found out that <code>cordova.file.externalRootDirectory</code> actually points to the root of <strong>internal storage</strong> of my android device! So I used it instead. Notice that the <code>cordova.file</code> is actually provided by <a href="http://ngcordova.com/docs/plugins/file/" target="_blank" rel="noopener">cordova file plugin</a>, however we can still access it with the file transfer plugin. You can get full list of provided paths <a href="https://github.com/apache/cordova-plugin-file#where-to-store-files" target="_blank" rel="noopener">here</a>.</p>
+<p>Note for iOS, I think you can use the <code>cordova.file.dataDirectory</code> path, but I haven’t tested it yet. Back to our download method. It returns a promise that we can pass some callback function on it. The first one is success callback, second is error callback, and the last is the callback that is called when the download is still progressing. And if you haven’t already noticed the <code>refreshMedia</code>, it is provided by ‘refresh gallery plugin’. The <code>refreshMedia.refresh()</code> method makes the file available in the gallery, immediately after downloaded.</p>
+<p><strong>Important:</strong> currently, we have to test the app on device and we can not test it in the browser via ‘ionic serve’… Well, you guess what? I think actually we can! But maybe that will be a discussion for another post.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Congratulations! We have learn how to download external image directly through ionic, moreover, we have also learn how to deal with cordova plugin. Well, thanks for reading! I hope you found something useful from here.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-number">1.</span> <span class="toc-text">Conclusion</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&text=Save external image to gallery with ionic"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&is_video=false&description=Save external image to gallery with ionic"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Save external image to gallery with ionic&body=Check out this article: http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&title=Save external image to gallery with ionic"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yeripratama.com/2016/04/13/save-external-image-to-gallery-with-ionic/&name=Save external image to gallery with ionic&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Yeri Pratama
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'yeripratama';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

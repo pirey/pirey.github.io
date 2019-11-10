@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="This is a quick overview of the workflow when we want to publish our iOS app. This post is intended to get you through the needed steps, and hopefully give you a quick and solid grasp of how all the t">
+<meta name="keywords" content="ionic,iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS app distribution workflow overview">
+<meta property="og:url" content="http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/index.html">
+<meta property="og:site_name" content="Tic Tech Toe">
+<meta property="og:description" content="This is a quick overview of the workflow when we want to publish our iOS app. This post is intended to get you through the needed steps, and hopefully give you a quick and solid grasp of how all the t">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://yeripratama.files.wordpress.com/2016/04/targetxcode.png">
+<meta property="og:updated_time" content="2019-11-10T06:24:24.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS app distribution workflow overview">
+<meta name="twitter:description" content="This is a quick overview of the workflow when we want to publish our iOS app. This post is intended to get you through the needed steps, and hopefully give you a quick and solid grasp of how all the t">
+<meta name="twitter:image" content="https://yeripratama.files.wordpress.com/2016/04/targetxcode.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/android-icon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+          
+        
+    
+    <!-- title -->
+    <title>iOS app distribution workflow overview</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/08/24/chmod-cheat-sheet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2016/04/13/save-external-image-to-gallery-with-ionic/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&text=iOS app distribution workflow overview"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&is_video=false&description=iOS app distribution workflow overview"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS app distribution workflow overview&body=Check out this article: http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&name=iOS app distribution workflow overview&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Enroll"><span class="toc-number">1.</span> <span class="toc-text">Enroll</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Certificates-IDs-amp-Profiles"><span class="toc-number">2.</span> <span class="toc-text">Certificates, IDs &amp; Profiles</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Certificates"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">Certificates</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#App-ID"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">App ID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Provisioning-profile"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">Provisioning profile</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#iTunes-Connect"><span class="toc-number">3.</span> <span class="toc-text">iTunes Connect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prepare-amp-Upload"><span class="toc-number">4.</span> <span class="toc-text">Prepare &amp; Upload</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        iOS app distribution workflow overview
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Tic Tech Toe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2016-04-28T14:11:22.000Z" itemprop="datePublished">2016-04-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS/">iOS</a>, <a class="tag-link" href="/tags/ionic/">ionic</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>This is a quick overview of the workflow when we want to publish our iOS app. This post is intended to get you through the needed steps, and hopefully give you a quick and solid grasp of how all the things works and connected. We will not cover the app development process here. Before you start, please note that you can also read the fully documented guide about how to distribute your iOS app <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40012582" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="Enroll"><a href="#Enroll" class="headerlink" title="Enroll"></a>Enroll</h2><p>Since distributing our iOS app is not free, make sure that you have enrolled for <strong>apple developer program</strong> <a href="https://developer.apple.com/programs" target="_blank" rel="noopener">here</a></p>
+<h2 id="Certificates-IDs-amp-Profiles"><a href="#Certificates-IDs-amp-Profiles" class="headerlink" title="Certificates, IDs &amp; Profiles"></a><strong>Certificates, IDs &amp; Profiles</strong></h2><p>After login to developer account, go to *<em>Certificates, IDs &amp; Profiles. *</em>There are basically 3 kind of things we need to setup here:</p>
+<h5 id="Certificates"><a href="#Certificates" class="headerlink" title="Certificates"></a>Certificates</h5><p>This thing identifies you as the developer / publisher who develop the app. We need to download the certificate and then install it in our local machine, by double clicking on the file.</p>
+<h5 id="App-ID"><a href="#App-ID" class="headerlink" title="App ID"></a><strong>App ID</strong></h5><p>This is the ID of your app (e.g <code>com.vendorname.app</code>)</p>
+<h5 id="Provisioning-profile"><a href="#Provisioning-profile" class="headerlink" title="Provisioning profile"></a><strong>Provisioning profile</strong></h5><p>To make it simple, this thing associates your certificate and the App ID you want to publish, so that they (Apple and your customers) will know who was publishing an App. As we all know, Apple treats this kind of things seriously. Just like the certificate, we need to download the provisioning profile and install it in our local machine, so that it can be recognized later in Xcode.</p>
+<h2 id="iTunes-Connect"><a href="#iTunes-Connect" class="headerlink" title="iTunes Connect"></a>iTunes Connect</h2><p>Sign in to <a href="https://itunesconnect.apple.com/" target="_blank" rel="noopener">iTunes connect</a>. There you can register an app record for the App ID you just create before. <strong>App record</strong> is basically the meta data of your App, e.g app title, app description, price, etc. iTunes connect is the place where our app will be uploaded.</p>
+<h2 id="Prepare-amp-Upload"><a href="#Prepare-amp-Upload" class="headerlink" title="Prepare &amp; Upload"></a>Prepare &amp; Upload</h2><p>I personally use <a href="http://ionicframework.com/" target="_blank" rel="noopener">ionic framework</a> to develop my app. When the app is ready to production or testing, we need to build it:</p>
+<p>ionic build ios</p>
+<p>There will be an <code>.xcodeproj</code> file inside <code>platforms/ios/</code> directory. And we can open it with Xcode by double clicking on it. After that, make sure that we associate the app with the correct provisioning profile, that is the one we create earlier. We need to build it, yes..again, but this time we do it in Xcode (I use Xcode version 7.3). Click on <strong>Product &gt; Build</strong>. Then we need to archive the app. Click on <strong>Product &gt; Archive</strong>. <strong>NOTE</strong>: In order to build and archive our app, we need to target a real device or generic build only device in xcode. See figure below <img src="https://yeripratama.files.wordpress.com/2016/04/targetxcode.png" alt="targetxcode"> After that open <strong>Window &gt; Organizer</strong> where you can see a list of your archives. There, you can choose the options to validate, export, or upload your app to the iTunes Connect. And finally from the iTunes Connect, we can submit the app to the app store.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Distributing my iOS app to the app store for the first time is an exhausting experience. We need some couple of separate steps and I, personally spent hours to gather information I needed. I was wondering why they create such protocol and scatter all the process in different places? Hmm, what do you think? Maybe you can help me answer it in the comment section below. Anyway, that is why this post is written. I hope that you got something useful from here, and thanks for reading.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Enroll"><span class="toc-number">1.</span> <span class="toc-text">Enroll</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Certificates-IDs-amp-Profiles"><span class="toc-number">2.</span> <span class="toc-text">Certificates, IDs &amp; Profiles</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Certificates"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">Certificates</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#App-ID"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">App ID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Provisioning-profile"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">Provisioning profile</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#iTunes-Connect"><span class="toc-number">3.</span> <span class="toc-text">iTunes Connect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prepare-amp-Upload"><span class="toc-number">4.</span> <span class="toc-text">Prepare &amp; Upload</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&text=iOS app distribution workflow overview"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&is_video=false&description=iOS app distribution workflow overview"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS app distribution workflow overview&body=Check out this article: http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&title=iOS app distribution workflow overview"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yeripratama.com/2016/04/28/ios-app-distribution-workflow/&name=iOS app distribution workflow overview&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Yeri Pratama
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://yeripratama.com/portofolio">Portofolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'yeripratama';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
