@@ -1,4 +1,4 @@
-import { getAllPostSlugs, getPostData, PostData } from "@/lib/post";
+import { getAllPostSlugs, getPostData, PostData } from "@/lib/blog";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 export const getStaticPaths: GetStaticPaths = () => {

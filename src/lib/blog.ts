@@ -28,7 +28,7 @@ export type PostData = {
   metadata: PostMetadata;
 };
 
-const postsDirectory = path.resolve(process.cwd(), "content/posts");
+const postsDirectory = path.resolve(process.cwd(), "content/blog");
 
 export async function getSortedPosts() {
   const slugs = getAllPostSlugs();

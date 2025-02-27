@@ -8,7 +8,7 @@ export default function remarkRelativeAsset({ slug }: { slug: string }) {
       const image = node.children.find((child) => child.type === "image");
       if (image) {
         const filename = image.url.replace("./", "");
-        image.url = `${BASEPATH}/assets/posts/${slug}/${filename}`;
+        image.url = `${BASEPATH}/assets/blog/${slug}/${filename}`;
       }
     });
   };

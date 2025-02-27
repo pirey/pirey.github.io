@@ -1,4 +1,4 @@
-import { getSortedPosts, PostData } from "@/lib/post";
+import { getSortedPosts, PostData } from "@/lib/blog";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ export default function Home(props: { allPostData: PostData[] }) {
       <ul>
         {props.allPostData.map((post) => (
           <li key={post.slug}>
-            <Link href={`/posts/${post.slug}`}>{post.metadata.title}</Link>
+            <Link href={`/blog/${post.slug}`}>{post.metadata.title}</Link>
           </li>
         ))}
       </ul>

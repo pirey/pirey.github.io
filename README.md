@@ -1,3 +1,9 @@
+# My Personal Website
+
+## Blog
+
+All assets will be copied to corresponding posts in public directory.
+
 ## Credit
 
 https://www.codeconcisely.com/posts/nextjs-storing-images-next-to-markdown/

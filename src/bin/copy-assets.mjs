@@ -3,8 +3,8 @@ import path from "path";
 import fsExtra from "fs-extra";
 
 const fsPromises = fs.promises;
-const targetDir = "./public/assets/posts";
-const postsDir = "./content/posts";
+const targetDir = "./public/assets/blog";
+const postsDir = "./content/blog";
 
 await fsExtra.emptyDir(targetDir);
 await createPostAssetFoldersForCopy();
