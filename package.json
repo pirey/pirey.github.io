@@ -4,18 +4,25 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "npm run copyassets",
     "build": "next build",
+    "predev": "npm run copyassets",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "copyassets": "node ./src/bin/copy-assets.mjs"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
+    "fs-extra": "^11.3.0",
     "gray-matter": "^4.0.3",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

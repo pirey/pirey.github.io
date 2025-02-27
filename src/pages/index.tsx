@@ -18,7 +18,7 @@ export default function Home(props: { allPostData: PostData[] }) {
       <ul>
         {props.allPostData.map((post) => (
           <li key={post.slug}>
-            <Link href={`/posts${post.slug}`}>{post.metadata.title}</Link>
+            <Link href={`/posts/${post.slug}`}>{post.metadata.title}</Link>
           </li>
         ))}
       </ul>

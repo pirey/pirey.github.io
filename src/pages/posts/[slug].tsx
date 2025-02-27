@@ -1,9 +1,4 @@
-import {
-  getAllPostSlugs,
-  getFilepath,
-  getPostData,
-  PostData,
-} from "@/lib/post";
+import { getAllPostSlugs, getPostData, PostData } from "@/lib/post";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -11,7 +6,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   return {
     fallback: false,
     paths: slugs.map((slug) => ({
-      params: { slug: slug.split("/") },
+      params: { slug: slug },
     })),
   };
 };
@@ -26,7 +21,7 @@ export const getStaticProps: GetStaticProps<{
     if (Array.isArray(slugParam)) return slugParam.join("/");
     return slugParam;
   })();
-  const post = await getPostData(getFilepath(slug));
+  const post = await getPostData(slug);
 
   return {
     props: {
