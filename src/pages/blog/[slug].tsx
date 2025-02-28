@@ -64,11 +64,11 @@ export default function BlogPostPage({ post }: { post: PostData }) {
         </title>
       </Head>
       <Header />
-      <section className="container px-4 mx-auto pt-4">
+      <section className="mx-auto max-w-3xl px-4 pt-4">
         <h2 className="text-2xl font-black">{post.metadata.title}</h2>
         <p className="text-xs">{formatDate(new Date(post.metadata.date))}</p>
         <div
-          className="pt-10 max-w-2xl post-content"
+          className="post-content max-w-2xl pt-10"
           dangerouslySetInnerHTML={{ __html: withStyle(post.contentHtml) }}
         ></div>
       </section>
