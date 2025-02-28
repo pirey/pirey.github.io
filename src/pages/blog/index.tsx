@@ -24,7 +24,7 @@ export default function BlogPage(props: { allPostData: PostData[] }) {
       <Header />
       <section className="container px-4 mx-auto pt-4">
         <h2 className="text-2xl font-black">Blog</h2>
-        <ul className="pt-10 flex flex-col gap-y-10">
+        <ul className="py-10 flex flex-col gap-y-10">
           {props.allPostData.map((post) => (
             <li key={post.slug}>
               <Link className="font-bold" href={`/blog/${post.slug}`}>
