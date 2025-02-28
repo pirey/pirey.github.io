@@ -40,9 +40,12 @@ export default function BlogPostPage({ post }: { post: PostData }) {
   const withStyle = (contentHtml: string = "") => {
     return `
       <style>
+      .post-content a { text-decoration: underline; }
       .post-content p { margin-bottom: 2rem; }
+      .post-content ul { margin-bottom: 2rem; list-style: unset; }
       .post-content pre { margin-bottom: 2rem; }
       .post-content code { border-radius: .5rem; }
+      .post-content img { border-radius: .5rem; }
       .post-content h1 { margin-bottom: 1rem; font-weight: bold; font-size: 1.75rem; } /* 28px */
       .post-content h2 { margin-bottom: 1rem; font-weight: bold; font-size: 1.5rem; }  /* 24px */
       .post-content h3 { margin-bottom: 1rem; font-weight: bold; font-size: 1.25rem; } /* 20px */
