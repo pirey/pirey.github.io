@@ -42,7 +42,7 @@ export default function BlogPostPage({ post }: { post: PostData }) {
       <style>
       .post-content a { text-decoration: underline; }
       .post-content p { margin-bottom: 2rem; }
-      .post-content ul { margin-bottom: 2rem; list-style: unset; }
+      .post-content ul { margin-bottom: 2rem; list-style: unset; list-style-position: inside; }
       .post-content pre { margin-bottom: 2rem; }
       .post-content code { border-radius: .5rem; }
       .post-content img { border-radius: .5rem; }

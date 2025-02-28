@@ -3,7 +3,7 @@ title: Git intro
 date: 2019-06-13 23:18:05
 description: An awesome introduction to git, you should definitely read it.
 tags:
-    - git
+  - git
 ---
 
 ## Keep track of our works (man git)
@@ -21,11 +21,13 @@ A repository (or repo) is basically a project containing source codes that is tr
 There's two main way to get a git repo. First, we can create our brand new project and tell git to keep track of it. Or, we can grab other people's project that is already tracked by git somewhere.
 
 To use the first method:
+
 - We can create new project or we can use any existing project which hasn't been tracked by git
 - Navigate to project directory via terminal / command prompt, `cd <project_dir>`
 - Run `git init`
 
 To use the second method:
+
 - Search for any git project, e.g from github
 - And then run `git clone <repo_url>`
 - This will download the project into our local machine
@@ -38,7 +40,7 @@ Therefore, before we make any changes to the project, we have to introduce ourse
 
 To do that we can run this command
 
-```
+```bash
 git config --global user.name="Your Name"
 git config --global user.email="your.email@somewhere.com"
 ```
@@ -50,11 +52,13 @@ There are at least 3 kinds of changes that we usually do to when we write code: 
 For illustration, let say we create some new files in our repo: `file_a.txt`, `file_b.txt`, and `file_c.txt`. After we created those files, however, git still doesn't know a thing about them. If we want git to keep track of the new files, we have to tell git to 'record' it.
 
 The basic flow is:
+
 - We made changes (add, edit, or delete)
 - We 'pick' which changes we want git to 'record', using `git add` command
 - Finally we tell git to `record` the changes, using `git commit -m "<commit message>"` command
 
 Continuing the illustration, let say we only want to keep track of `file_a.txt`, so the steps is:
+
 - Run `git add file_a.txt`
 - Then run `git commit -m "add file_a to the repo"`
 
@@ -71,7 +75,6 @@ If we run `git add file_b.txt`, and then run `git status` again, now git will te
 Then, if we run `git commit -m "add file_b"`, and then run `git status` again, `file_b.txt` is now dissapear from the output, just like `file_a.txt` previously. Because `git status` only tells us about what are the current changes that happens in the repo, and since `file_a.txt` and `file_b.txt` has now tracked by git, it doesn't appear in the output.
 
 Right now, if we edit the content of `file_c.txt`, and then run `git status` git will always tells us it is 'unstaged', because there's no information about the file whatsoever. However, if we edit `file_a.txt` or `file_b.txt`, and then run `git status`, git will tell us that its 'modified', because git has a way to compare the file content with the content from latest commit.
-
 
 ## Reading history (git log)
 
@@ -93,7 +96,7 @@ We can setup our own server to host the remote repo, or we can just use third pa
 
 To 'connect' our repo to a remote, first we need to create a pointer to a remote.
 
-```
+```bash
 git remote add origin <url>
 ```
 
@@ -101,7 +104,7 @@ The `<url>` is where the remote repo is, and `origin` is the name of the pointer
 
 We can have more than one remote repo, for example if we want to 'connect' our repo to another remote repo, we can run:
 
-```
+```bash
 git remote add other_remote <url>
 ```
 
@@ -109,7 +112,7 @@ We can give nickname to the remote as we want, as long as it doesn't clash with 
 
 Now that we have a remote repo, we can 'upload' our changes to the remote repo. To do so, we use the `git push` command, for example:
 
-```
+```bash
 git push origin master
 ```
 
@@ -119,7 +122,7 @@ After we 'upload' our changes to remote repo, other people who want to collabora
 
 To get latest changes from remote repo, we can use `git pull` command, for example:
 
-```
+```bash
 git pull origin master
 ```
 
@@ -129,7 +132,7 @@ We have learned previously that we can view history of commits using `git log`. 
 
 For illustration, we run `git log --oneline` and these are the commits that we have:
 
-```
+```bash
 1234d commit 4
 1234c commit 3
 1234b commit 2
@@ -140,13 +143,13 @@ This tells us that the latest commit `hash` is `1234d` with the message `commit 
 
 Let say we want to 'undo' the changes in `commit 4`, and 'go back' to `commit 3`, what we can do is run this command:
 
-```
+```bash
 git reset --hard 1234c
 ```
 
 This command will make `commit 3` the latest commit, and if we run `git log --oneline` again, the `commit 4` is now dissapear:
 
-```
+```bash
 1234c commit 3
 1234b commit 2
 1234a commit 1
@@ -158,7 +161,7 @@ In the previous example, we can also think of what we have done as 'moving' the 
 
 We can tell git to display where the `HEAD` is using this command:
 
-```
+```bash
 git log --oneline --decorate
 ```
 
@@ -172,7 +175,7 @@ We can think of series of commits that we made so far as a 'timeline'. What we n
 
 By default, when we create new project using `git init` we only have one `branch` with the name of `master`. That is where we previosly create our commits. To make a new `branch`, we use `git branch` command, for example:
 
-```
+```bash
 git branch develop
 ```
 
@@ -182,21 +185,23 @@ Previously, we only have one branch, `master`, and everytime we make changes, th
 
 If you still remember our discussion about `HEAD` in the previous section, the `HEAD` is pointing to the latest commit. But previously, since we only have one branch, the `HEAD` is pointing to the latest commit on the `master` branch. The active branch is determined by where the `HEAD` points to. Because the `HEAD` still points to `master`, that means `master` is the 'active' branch. We can move the `HEAD` to points to another branch by using `git checkout` command. For example if we want to activate `develop` branch, we can use this command:
 
-```
+```bash
 git checkout develop
 ```
 
 From now on, if we create new commits, it will be added to the `develop` branch and the `master` branch will not know any changes we made in `develop` branch.
 
 For example, the `master` branch have:
-```
+
+```bash
 file_a.txt
 file_b.txt
 file_c.txt
 ```
 
 If we `checkout` the `develop` branch and add new files to our project and commit the changes:
-```
+
+```bash
 file_a.txt
 file_b.txt
 file_c.txt
@@ -207,7 +212,8 @@ file_z.txt
 ```
 
 Now, if we `checkout` the `master` branch again using `git checkout master`, we won't see the newly added files. The files in the `master` branch is still the following:
-```
+
+```bash
 file_a.txt
 file_b.txt
 file_c.txt
@@ -219,19 +225,19 @@ When we finish the development in the `develop` branch, after testing it and fee
 
 For example, if we want to merge all the changes from `develop` branch back to our `master` branch, first we checkout `master` branch
 
-```
+```bash
 git checkout master
 ```
 
 And then we run:
 
-```
+```bash
 git merge develop
 ```
 
 Now the structure of our project become:
 
-```
+```bash
 file_a.txt
 file_b.txt
 file_c.txt
@@ -246,4 +252,3 @@ Git is smart enough to detect any duplicate files, therefore if two branches con
 If the two branches contain files with same name but different content, git can detect the difference and automatically combine the content of the file properly if it can.
 
 Now that we have more than one branch, we can also `push` to or `pull` from specified branch. For example `git pull origin develop` will get any changes from `origin` remote, from `develop` branch in the remote. Or `git push origin develop` to push our local changes to `develop` branch in the remote.
-
