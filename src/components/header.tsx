@@ -8,6 +8,7 @@ export function Header() {
       <div className="container mx-auto flex justify-between items-center h-16">
         <Link href="/" className="flex space-x-4">
           <Image
+            priority
             src={teal}
             width={32}
             height={32}
