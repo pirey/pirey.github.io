@@ -6,7 +6,7 @@ export default function remarkRelativeAsset({ slug }: { slug: string }) {
   return function (tree: Root) {
     visit(tree, "paragraph", (node) => {
       const image = node.children.find((child) => child.type === "image");
-      if (image) {
+      if (image && image.url.startsWith("./")) {
         const filename = image.url.replace("./", "");
         image.url = `${BASEPATH}/assets/blog/${slug}/${filename}`;
       }
