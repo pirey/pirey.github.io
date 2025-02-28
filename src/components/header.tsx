@@ -5,7 +5,7 @@ import teal from "@/assets/teal.jpeg";
 export function Header() {
   return (
     <header className="header">
-      <div className="container mx-auto flex justify-between items-center h-16">
+      <div className="container px-4 mx-auto flex justify-between items-center h-16">
         <Link href="/" className="flex space-x-4">
           <Image
             priority
@@ -17,9 +17,15 @@ export function Header() {
           />
           <h2 className="text-xl font-bold">Yeri Pratama</h2>
         </Link>
-        <ul className="flex space-x-2">
+        <ul className="flex space-x-6">
+          <li>
+            <Link href="/">About</Link>
+          </li>
           <li>
             <Link href="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link href="/portfolio">Portfolio</Link>
           </li>
         </ul>
       </div>

@@ -2,6 +2,7 @@ import remarkRelativeAsset from "@/plugins/remarkRelativeAsset";
 import matter from "gray-matter";
 import fs from "node:fs";
 import path from "node:path";
+import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -108,12 +109,14 @@ export async function getPostData(slug: string) {
   const matterResult = matter(fileContents);
   const matterData = matterResult.data as PostMatter;
 
+  // prettier-ignore
   const processedContent = await unified()
-    .use(remarkParse)
-    .use(remarkRelativeAsset, { slug })
-    .use(remarkRehype)
-    .use(rehypeStringify)
-    .process(matterResult.content);
+    .use(remarkParse)                        // parse markdown into ast
+    .use(remarkRelativeAsset, { slug })      // convert relative url to static public url
+    .use(remarkRehype)                       // convert markdown ast to html ast
+    .use(rehypeHighlight)                    // code block highlight using lowlight/highlight.js
+    .use(rehypeStringify)                    // to html string
+  .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
 

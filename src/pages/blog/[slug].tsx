@@ -4,6 +4,7 @@ import { getAllPostSlugs, getPostData, PostData } from "@/lib/blog";
 import { formatDate } from "@/lib/datetime";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import "highlight.js/styles/tokyo-night-dark.min.css";
 
 export const getStaticPaths: GetStaticPaths = () => {
   const slugs = getAllPostSlugs();
@@ -35,11 +36,13 @@ export const getStaticProps: GetStaticProps<{
   };
 };
 
-export default function BlogPost({ post }: { post: PostData }) {
+export default function BlogPostPage({ post }: { post: PostData }) {
   const withStyle = (contentHtml: string = "") => {
     return `
       <style>
       .post-content p { margin-bottom: 2rem; }
+      .post-content pre { margin-bottom: 2rem; }
+      .post-content code { border-radius: .5rem; }
       .post-content h1 { margin-bottom: 1rem; font-weight: bold; font-size: 1.75rem; } /* 28px */
       .post-content h2 { margin-bottom: 1rem; font-weight: bold; font-size: 1.5rem; }  /* 24px */
       .post-content h3 { margin-bottom: 1rem; font-weight: bold; font-size: 1.25rem; } /* 20px */
@@ -58,11 +61,11 @@ export default function BlogPost({ post }: { post: PostData }) {
         </title>
       </Head>
       <Header />
-      <section className="container mx-auto pt-4">
+      <section className="container px-4 mx-auto pt-4">
         <h2 className="text-2xl font-black">{post.metadata.title}</h2>
         <p className="text-xs">{formatDate(new Date(post.metadata.date))}</p>
         <div
-          className="pt-10 max-w-xl post-content"
+          className="pt-10 max-w-2xl post-content"
           dangerouslySetInnerHTML={{ __html: withStyle(post.contentHtml) }}
         ></div>
       </section>

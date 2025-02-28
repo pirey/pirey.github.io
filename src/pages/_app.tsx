@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href={`${BASEPATH}/favicon.ico`} />
       </Head>
       <main className={geist.className}>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </main>
     </>
   );
