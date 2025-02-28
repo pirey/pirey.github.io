@@ -10,7 +10,7 @@ export function Header() {
 
   const background =
     menuOpen || scrolled ? "bg-white/80 backdrop-blur-sm" : "bg-white";
-  const shadow = scrolled ? "shadow-sm" : "";
+  const shadow = menuOpen || scrolled ? "shadow-sm" : "";
   const headerClass = `${background} ${shadow}`;
 
   const handleWindowScroll = () => {
@@ -33,7 +33,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`${headerClass} header fixed top-0 right-0 left-0 z-50 h-16`}
+        className={`${headerClass} header fixed top-0 right-0 left-0 z-50`}
       >
         <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-4">
           <Link href="/" className="flex gap-x-4">
@@ -62,24 +62,34 @@ export function Header() {
           >
             <Bars2 />
           </span>
-          <Menu open={menuOpen} scrolled={scrolled} />
+          <Menu />
         </div>
+        {menuOpen && <MenuMobile />}
       </header>
       <div className="h-16"></div>
     </>
   );
 }
 
-function Menu({ open, scrolled }: { open: boolean; scrolled: boolean }) {
-  const background =
-    open || scrolled ? "bg-white/80 backdrop-blur-sm" : "bg-white";
-  const shadow = scrolled ? "shadow-sm" : "";
-  const display = open ? "flex flex-col" : "hidden";
-  const menuClass = `${background} ${shadow} ${display}`;
+function Menu() {
   return (
-    <ul
-      className={`${menuClass} absolute top-full left-0 z-10 w-full gap-x-6 gap-y-6 p-4 sm:static sm:flex sm:w-auto sm:bg-transparent sm:p-0 sm:shadow-none`}
-    >
+    <ul className="hidden gap-x-6 p-0 sm:flex">
+      <li>
+        <Link href="/blog">Blog</Link>
+      </li>
+      <li>
+        <Link href="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link href="/about">About</Link>
+      </li>
+    </ul>
+  );
+}
+
+function MenuMobile() {
+  return (
+    <ul className="flex flex-col gap-y-6 p-4 sm:p-0">
       <li>
         <Link href="/blog">Blog</Link>
       </li>
