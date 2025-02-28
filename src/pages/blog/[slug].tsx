@@ -41,7 +41,7 @@ export default function BlogPostPage({ post }: { post: PostData }) {
     return `
       <style>
       .post-content a { text-decoration: underline; }
-      .post-content p { margin-bottom: 2rem; }
+      .post-content p { margin-bottom: 2rem; word-wrap: break-word; }
       .post-content ul { margin-bottom: 2rem; list-style: unset; list-style-position: inside; }
       .post-content pre { margin-bottom: 2rem; }
       .post-content code { border-radius: .5rem; }
