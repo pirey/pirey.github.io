@@ -3,34 +3,34 @@ title: Save external image to gallery with ionic
 date: 2016-04-13 21:06:15
 description: Here you will learn to save external image to gallery in ionic
 tags:
-    - angularjs
-    - cordova
-    - ionic
+  - angularjs
+  - cordova
+  - ionic
 ---
 
 A few days ago I need to implement a feature where the user can save some displayed image in ionic app to the device image gallery. In my case, it was an image displayed using html img tag with external source url. So all I need was some method to download that file. Though the task is simple, it's been a-lot-of-browsing activity since it was my first time dealing with cordova plugin. Then I decided to write this post, to explain the steps needed and wrap it all up. Let's begin. First we create an ionic project, and move to that directory
 
-```
+```bash
 ionic start saveimage blank
 cd saveimage
 ```
 
 Then make sure we add appropriate platform **Note:** this tutorial is intended to work with android platform, since I have not successfully make it works on iOS.
 
-```
+```bash
 # for android
 ionic platform add android
 ```
 
 In this project we will use ngCordova for easier use of cordova plugin within ionic. To set it up you can download the source files from [their website](http://ngcordova.com) or you can simply download it via bower:
 
-```
+```bash
 bower install ngCordova
 ```
 
 If you don't have bower installed just type the following command to install it.
 
-```
+```bash
 npm install -g bower
 ```
 
@@ -44,18 +44,18 @@ And then include it in `www/index.html`. If you installed it via bower, you can 
 Next we need to include the ngCordova into our module. Open `www/js/app.js` and add the following
 
 ```javascript
-angular.module('myApp', ['ngCordova'])
+angular.module("myApp", ["ngCordova"]);
 ```
 
 For the actual action to download the file, we need to install the [cordova file transfer plugin](http://ngcordova.com/docs/plugins/fileTransfer/).
 
-```
+```bash
 ionic plugin add cordova-plugin-file-transfer
 ```
 
 The file transfer plugin does not automatically add the downloaded file to the gallery, so we need additional plugin to do it. Install plugin to refresh gallery.
 
-```
+```bash
 ionic plugin add https://github.com/lotterfriends/refreshgallery
 ```
 
@@ -63,8 +63,11 @@ Note that without this plugin, we can still download the image file, but to mak
 
 ```html
 <ion-content class="padding" ng-controller="HomeCtrl">
-  <button ng-click="downloadImage()" class="button button-block button-positive">
-  Download
+  <button
+    ng-click="downloadImage()"
+    class="button button-block button-positive"
+  >
+    Download
   </button>
 </ion-content>
 ```
