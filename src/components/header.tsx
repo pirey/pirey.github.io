@@ -36,7 +36,7 @@ export function Header() {
         className={`${headerClass} header fixed top-0 right-0 left-0 z-50 h-16`}
       >
         <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-4">
-          <Link href="/" className="flex space-x-4">
+          <Link href="/" className="flex gap-x-4">
             <Image
               priority
               src={teal}
@@ -81,13 +81,13 @@ function Menu({ open, scrolled }: { open: boolean; scrolled: boolean }) {
       className={`${menuClass} absolute top-full left-0 z-10 w-full gap-x-6 gap-y-6 p-4 sm:static sm:flex sm:w-auto sm:bg-transparent sm:p-0 sm:shadow-none`}
     >
       <li>
-        <Link href="/">About</Link>
-      </li>
-      <li>
         <Link href="/blog">Blog</Link>
       </li>
       <li>
         <Link href="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link href="/about">About</Link>
       </li>
     </ul>
   );

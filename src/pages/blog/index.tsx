@@ -1,10 +1,11 @@
+import { Content } from "@/components/content";
 import { Header } from "@/components/header";
-import { getSortedPosts, PostData } from "@/lib/blog";
-import { GetStaticProps } from "next";
-import Link from "next/link";
-import { formatDate } from "@/lib/datetime";
-import Head from "next/head";
 import { PAGE_TITLE } from "@/constants";
+import { getSortedPosts, PostData } from "@/lib/blog";
+import { formatDate } from "@/lib/datetime";
+import { GetStaticProps } from "next";
+import Head from "next/head";
+import Link from "next/link";
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostData = await getSortedPosts();
@@ -22,7 +23,7 @@ export default function BlogPage(props: { allPostData: PostData[] }) {
         <title>Blog | {PAGE_TITLE}</title>
       </Head>
       <Header />
-      <section className="mx-auto max-w-3xl px-4 pt-4">
+      <Content>
         <h2 className="text-2xl font-black">Blog</h2>
         <ul className="flex flex-col gap-y-10 py-10">
           {props.allPostData.map((post) => (
@@ -37,7 +38,7 @@ export default function BlogPage(props: { allPostData: PostData[] }) {
             </li>
           ))}
         </ul>
-      </section>
+      </Content>
     </>
   );
 }
