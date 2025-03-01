@@ -10,6 +10,8 @@ All assets will be copied to corresponding posts in public directory.
 
 ## Credit
 
+https://giscus.app/
+
 https://unifiedjs.com/
 
 https://highlightjs.org/
