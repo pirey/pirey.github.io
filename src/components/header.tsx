@@ -1,8 +1,9 @@
+import teal from "@/assets/teal.jpeg";
+import { Bars2 } from "@/components/icons";
+import { PAGE_TITLE } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import teal from "@/assets/teal.jpeg";
 import React from "react";
-import { Bars2 } from "@/components/icons";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -45,12 +46,15 @@ export function Header() {
               alt="Teal"
               className="rounded-full"
             />
-            <h2 className="text-xl font-bold" aria-label="Yeri Pratama">
+            <h2 className="text-xl font-bold" aria-label={PAGE_TITLE}>
               <span aria-hidden className="hidden sm:inline">
-                Yeri Pratama
+                {PAGE_TITLE}
               </span>
               <span aria-hidden className="inline sm:hidden">
-                YP
+                {PAGE_TITLE.split(" ")
+                  .map((s) => s[0])
+                  .join("")
+                  .toUpperCase()}
               </span>
             </h2>
           </Link>

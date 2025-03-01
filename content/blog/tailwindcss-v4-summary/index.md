@@ -9,16 +9,26 @@ The most notable change is in version 4, Tailwind CSS no longer use `tailwind.co
 To add custom color or other customisation, we define variables under `@theme` directive inside CSS file.
 
 ```css
+/* index.css */
+import "tailwindcss";
+
 @theme {
   --color-prime-teal: #008080;
   --font-poppins: Poppins, sans-serif;
 }
 ```
 
-Tailwind will generate utility class out of it.
+There are set of predefined variable prefixes which they call [theme variable namespace](https://tailwindcss.com/docs/theme#theme-variable-namespaces).
+
+```css
+--color-*
+--font-*
+--text-*
+...
+```
+
+Each prefix will generate its corresponding utility classes.
 
 ```html
 <p class="color-prime-teal font-poppins">Prime Teal</p>
 ```
-
-There are set of predefined variable prefixes which they call [theme variable namespace](https://tailwindcss.com/docs/theme#theme-variable-namespaces).

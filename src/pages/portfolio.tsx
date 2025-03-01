@@ -7,7 +7,7 @@ export default function PortfolioPage() {
   return (
     <>
       <Head>
-        <title>Portfolio | {PAGE_TITLE}</title>
+        <title>{`Portfolio | ${PAGE_TITLE}`}</title>
       </Head>
       <Header />
       <Content>

@@ -28,7 +28,7 @@ async function createPostAssetFoldersForCopy() {
       // Create a folder for assets of this post inside public
       await fsPromises.mkdir(`${targetDir}/${slug}`);
 
-      await copyAssetsToPublic(assets, slug); // TODO
+      await copyAssetsToPublic(assets, slug);
     }
   }
 }

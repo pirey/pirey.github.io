@@ -1,26 +1,28 @@
 import { Content } from "@/components/content";
 import { Header } from "@/components/header";
 import { PAGE_TITLE } from "@/constants";
-import { getSortedPosts, PostData } from "@/lib/blog";
-import { formatDate } from "@/lib/datetime";
+import { getSortedPosts, PostData } from "@/shared/blog";
+import { formatDate } from "@/shared/datetime";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
+
+type ContentlessPost = Omit<PostData, "contentHtml" | "content">;
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostData = await getSortedPosts();
   return {
     props: {
-      allPostData,
+      allPostData: allPostData.map(({ contentHtml, content, ...post }) => post),
     },
   };
 };
 
-export default function BlogPage(props: { allPostData: PostData[] }) {
+export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
   return (
     <>
       <Head>
-        <title>Blog | {PAGE_TITLE}</title>
+        <title>{`Blog | ${PAGE_TITLE}`}</title>
       </Head>
       <Header />
       <Content>

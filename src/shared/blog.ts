@@ -1,4 +1,4 @@
-import remarkRelativeAsset from "@/plugins/remarkRelativeAsset";
+import { remarkRelativeAsset } from "@/shared/remark";
 import matter from "gray-matter";
 import fs from "node:fs";
 import path from "node:path";
