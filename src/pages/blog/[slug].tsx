@@ -5,6 +5,7 @@ import { formatDate } from "@/lib/datetime";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import "highlight.js/styles/tokyo-night-dark.min.css";
+import Giscus from "@giscus/react";
 
 export const getStaticPaths: GetStaticPaths = () => {
   const slugs = getAllPostSlugs();
@@ -71,6 +72,22 @@ export default function BlogPostPage({ post }: { post: PostData }) {
           className="post-content max-w-2xl pt-10"
           dangerouslySetInnerHTML={{ __html: withStyle(post.contentHtml) }}
         ></div>
+        <div className="py-10">
+          <Giscus
+            repo="pirey/_"
+            repoId="R_kgDOOAcOdw"
+            category="Announcements"
+            categoryId="DIC_kwDOOAcOd84Cncqs"
+            mapping="pathname"
+            strict="0"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
+            theme="preferred_color_scheme"
+            lang="en"
+            loading="lazy"
+          />
+        </div>
       </section>
     </>
   );
