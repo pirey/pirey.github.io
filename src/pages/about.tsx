@@ -16,18 +16,14 @@ export default function AboutPage() {
       <Content>
         <h2 className="text-2xl font-black">About Me</h2>
         <div className="py-10">
-          <div className="flex flex-col items-center gap-x-10 sm:flex-row">
+          <div className="flex flex-col items-center gap-x-10 sm:flex-row sm:items-start">
             <Image src={pp} alt="Me" className="mb-8 h-32 w-32 rounded-full" />
             <div>
-              <p className="mb-8">Hi! 👋</p>
-
               <p className="mb-8">
                 I&apos;m a software developer with a strong focus on web app
                 development. With years of experience building and optimizing
                 applications, I enjoy crafting clean, efficient, and
-                user-friendly solutions. Whether working on frontend
-                interactions or backend logic, I strive to create seamless
-                digital experiences.
+                user-friendly solutions for seamless digital experiences.
               </p>
 
               <p className="mb-8">
