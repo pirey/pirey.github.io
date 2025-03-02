@@ -4,7 +4,7 @@ date: 2025-03-02T10:31:45
 description: How some shady website was deployed under my domain using GitHub pages.
 ---
 
-Earlier this morning, someone out of nowhere deployed some ridiculously shady gambling website under my domain name.
+Earlier this morning, someone out of nowhere deployed some ridiculously shady website under my domain name.
 
 And here's how it went.
 
