@@ -8,13 +8,9 @@ Code block are highlighted using [highlight.js](https://highlightjs.org/)
 
 All assets will be copied to corresponding posts in public directory.
 
+All comments will be stored to github repo discussion and managed by [giscus](https://giscus.app).
+
 ## Credit
-
-https://giscus.app/
-
-https://unifiedjs.com/
-
-https://highlightjs.org/
 
 https://www.codeconcisely.com/posts/nextjs-storing-images-next-to-markdown/
 
