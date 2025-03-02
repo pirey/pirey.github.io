@@ -12,11 +12,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>{PAGE_TITLE}</title>
         <link rel="icon" href={`${BASEPATH}/favicon.ico`} />
-        {config.gtmId && <GoogleTagManager gtmId={config.gtmId} />}
       </Head>
       <main className={geist.className}>
         <Component {...pageProps} />
       </main>
+      {config.gtmId && <GoogleTagManager gtmId={config.gtmId} />}
     </>
   );
 }
