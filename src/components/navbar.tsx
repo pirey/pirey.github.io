@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export function Header() {
+export function TopNavBar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
 

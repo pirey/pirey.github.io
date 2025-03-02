@@ -1,4 +1,4 @@
-import { Header } from "@/components/header";
+import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { getAllPostSlugs, getPostData, PostData } from "@/shared/blog";
 import { formatDate } from "@/shared/datetime";
@@ -65,7 +65,7 @@ export default function BlogPostPage({ post }: { post: PostData }) {
       <Head>
         <title>{`${post.metadata.title} | ${PAGE_TITLE}`}</title>
       </Head>
-      <Header />
+      <TopNavBar />
       <section className="mx-auto max-w-3xl px-4 pt-4">
         <h2 className="text-2xl font-black">{post.metadata.title}</h2>
         <p className="text-xs">{formatDate(new Date(post.metadata.date))}</p>

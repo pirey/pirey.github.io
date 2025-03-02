@@ -1,5 +1,5 @@
 import { Content } from "@/components/content";
-import { Header } from "@/components/header";
+import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { getSortedPosts, PostData } from "@/shared/blog";
 import { formatDate } from "@/shared/datetime";
@@ -24,7 +24,7 @@ export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
       <Head>
         <title>{`Blog | ${PAGE_TITLE}`}</title>
       </Head>
-      <Header />
+      <TopNavBar />
       <Content>
         <h2 className="text-2xl font-black">Blog</h2>
         <ul className="flex flex-col gap-y-10 py-10">

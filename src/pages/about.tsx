@@ -1,5 +1,5 @@
 import { Content } from "@/components/content";
-import { Header } from "@/components/header";
+import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import Head from "next/head";
 import Image from "next/image";
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <Head>
         <title>{PAGE_TITLE}</title>
       </Head>
-      <Header />
+      <TopNavBar />
       <Content>
         <h2 className="text-2xl font-black">About Me</h2>
         <div className="py-10">
