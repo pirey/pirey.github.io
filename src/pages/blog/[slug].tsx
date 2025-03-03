@@ -7,6 +7,7 @@ import Head from "next/head";
 import "highlight.js/styles/tokyo-night-dark.min.css";
 import Giscus from "@giscus/react";
 import config from "@/shared/config";
+import Link from "next/link";
 
 export const getStaticPaths: GetStaticPaths = () => {
   const slugs = getAllPostSlugs();
@@ -69,10 +70,16 @@ export default function BlogPostPage({ post }: { post: PostData }) {
       <section className="mx-auto max-w-3xl px-4 pt-4">
         <h2 className="text-2xl font-black">{post.metadata.title}</h2>
         <p className="text-xs">{formatDate(new Date(post.metadata.date))}</p>
+        <Link href="/blog" className="block pt-4 underline">
+          ← All posts
+        </Link>
         <div
           className="post-content max-w-2xl pt-10"
           dangerouslySetInnerHTML={{ __html: withStyle(post.contentHtml) }}
         ></div>
+        <Link href="/blog" className="underline">
+          ← All posts
+        </Link>
         <div className="py-10">
           {config.giscusRepo && config.giscusRepoId && (
             <Giscus
