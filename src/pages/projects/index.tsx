@@ -36,10 +36,10 @@ function ProjectListItem({ project }: { project: Project }) {
       <Link className="font-bold" href={`/projects/${project.slug}`}>
         {project.title}
       </Link>
-      <p className="text-xs">{project.year}</p>
-      <p>
-        <span className="italic">{project.role}</span> — {project.description}
+      <p className="text-sm">
+        <span className="italic">{project.role}</span> — {project.year}
       </p>
+      <p>{project.description}</p>
       <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
         {project.tags.map((tag) => (
           <LabelBadge key={tag}>{tag}</LabelBadge>

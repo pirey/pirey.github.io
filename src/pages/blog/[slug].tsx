@@ -69,12 +69,12 @@ export default function BlogPostPage({ post }: { post: PostData }) {
       <TopNavBar />
       <section className="mx-auto max-w-3xl px-4 pt-4">
         <h2 className="text-2xl font-black">{post.metadata.title}</h2>
-        <p className="text-xs">{formatDate(new Date(post.metadata.date))}</p>
+        <p className="text-sm">{formatDate(new Date(post.metadata.date))}</p>
         <Link href="/blog" className="block pt-4 underline">
           ← All posts
         </Link>
         <article
-          className="post-content max-w-2xl pt-10"
+          className="post-content pt-10"
           dangerouslySetInnerHTML={{ __html: withStyle(post.contentHtml) }}
         ></article>
         <Link href="/blog" className="underline">

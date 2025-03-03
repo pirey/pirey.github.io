@@ -34,7 +34,7 @@ export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
               <Link className="font-bold" href={`/blog/${post.slug}`}>
                 {post.metadata.title}
               </Link>
-              <p className="text-xs">
+              <p className="text-sm">
                 {formatDate(new Date(post.metadata.date))}
               </p>
               <p>{post.metadata.description}</p>

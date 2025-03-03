@@ -4,10 +4,9 @@ import { PAGE_TITLE } from "@/constants";
 import Head from "next/head";
 import Image from "next/image";
 import pp from "@/assets/pp.jpg";
-import Link from "next/link";
 import { Envelope, Github, LinkedIn, Twitter } from "@/components/icons";
 import { Heading } from "@/components/heading";
-import { LabelBadge } from "@/components/badge";
+import { LabelBadge, LabelBadgeList } from "@/components/badge";
 
 function ContactIcon({ children }: { children: React.ReactNode }) {
   return (
@@ -36,32 +35,44 @@ export default function AboutPage() {
               />
               <ul className="flex gap-2">
                 <li>
-                  <Link href="https://github.com/pirey">
+                  <a
+                    href="https://github.com/pirey"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <ContactIcon>
                       <Github />
                     </ContactIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li className="col">
-                  <Link href="https://www.linkedin.com/in/yeri-pratama/">
+                  <a href="https://www.linkedin.com/in/yeri-pratama/">
                     <ContactIcon>
                       <LinkedIn />
                     </ContactIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li className="col">
-                  <Link href="https://twitter.com/_pirey">
+                  <a
+                    href="https://twitter.com/_pirey"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <ContactIcon>
                       <Twitter />
                     </ContactIcon>
-                  </Link>
+                  </a>
                 </li>
                 <li className="col">
-                  <Link href="mailto:mail@yeripratama.com?subject=Hello">
+                  <a
+                    href="mailto:mail@yeripratama.com?subject=Hello"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <ContactIcon>
                       <Envelope />
                     </ContactIcon>
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -74,20 +85,20 @@ export default function AboutPage() {
               <div className="mb-6">
                 <p>I am comfortable to work on projects using:</p>
 
-                <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
+                <LabelBadgeList>
                   <LabelBadge>JavaScript / TypeScript / NextJS</LabelBadge>
                   <LabelBadge>Python / Flask</LabelBadge>
                   <LabelBadge>PHP / Laravel</LabelBadge>
                   <LabelBadge>SQL</LabelBadge>
                   <LabelBadge>React</LabelBadge>
                   <LabelBadge>TailwindCSS</LabelBadge>
-                </div>
+                </LabelBadgeList>
               </div>
 
               <div className="mb-6">
                 <p>I have previously work using the following tech:</p>
 
-                <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
+                <LabelBadgeList>
                   <LabelBadge>Go</LabelBadge>
                   <LabelBadge>Ruby</LabelBadge>
                   <LabelBadge>React Native</LabelBadge>
@@ -95,7 +106,7 @@ export default function AboutPage() {
                   <LabelBadge>Ionic Framework</LabelBadge>
                   <LabelBadge>ElasticSearch</LabelBadge>
                   <LabelBadge>Redis</LabelBadge>
-                </div>
+                </LabelBadgeList>
               </div>
             </div>
           </div>

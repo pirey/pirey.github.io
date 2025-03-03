@@ -5,3 +5,7 @@ export function LabelBadge({ children }: { children: React.ReactNode }) {
     </span>
   );
 }
+
+export function LabelBadgeList({ children }: { children: React.ReactNode }) {
+  return <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">{children}</div>;
+}
