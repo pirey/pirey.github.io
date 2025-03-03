@@ -1,17 +1,18 @@
 import { Content } from "@/components/content";
+import { Heading } from "@/components/heading";
 import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import Head from "next/head";
 
-export default function PortfolioPage() {
+export default function ProjectsPage() {
   return (
     <>
       <Head>
-        <title>{`Portfolio | ${PAGE_TITLE}`}</title>
+        <title>{`Projects | ${PAGE_TITLE}`}</title>
       </Head>
       <TopNavBar />
       <Content>
-        <h2 className="text-2xl font-black">Portfolio</h2>
+        <Heading>Projects</Heading>
         <div className="py-10">Coming soon.</div>
       </Content>
     </>

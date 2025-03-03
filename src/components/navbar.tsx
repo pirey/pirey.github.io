@@ -82,7 +82,7 @@ function Menu() {
         <Link href="/blog">Blog</Link>
       </li>
       <li>
-        <Link href="/portfolio">Portfolio</Link>
+        <Link href="/projects">Projects</Link>
       </li>
       <li>
         <Link href="/about">About</Link>
@@ -98,7 +98,7 @@ function MenuMobile() {
         <Link href="/blog">Blog</Link>
       </li>
       <li>
-        <Link href="/portfolio">Portfolio</Link>
+        <Link href="/projects">Projects</Link>
       </li>
       <li>
         <Link href="/about">About</Link>

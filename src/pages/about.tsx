@@ -5,6 +5,24 @@ import Head from "next/head";
 import Image from "next/image";
 import pp from "@/assets/pp.jpg";
 import Link from "next/link";
+import { Envelope, Github, LinkedIn, Twitter } from "@/components/icons";
+import { Heading } from "@/components/heading";
+
+function ContactIcon({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-700/40 text-gray-700">
+      {children}
+    </div>
+  );
+}
+
+function LabelBadge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-block rounded-sm bg-gray-500 px-2 font-bold text-white">
+      {children}
+    </span>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -14,53 +32,77 @@ export default function AboutPage() {
       </Head>
       <TopNavBar />
       <Content>
-        <h2 className="text-2xl font-black">About Me</h2>
+        <Heading>About Me</Heading>
         <div className="py-10">
-          <div className="flex flex-col items-center gap-x-10 sm:flex-row sm:items-start">
-            <Image src={pp} alt="Me" className="mb-8 h-32 w-32 rounded-full" />
-            <div>
-              <p className="mb-8">
-                I&apos;m a software developer with a strong focus on web app
-                development. With years of experience building and optimizing
-                applications, I enjoy crafting clean, efficient, and
-                user-friendly solutions for seamless digital experiences.
-              </p>
-
-              <p className="mb-8">
-                I&apos;m always exploring new technologies, refining my skills,
-                and tackling interesting challenges. If you&apos;re looking for
-                someone passionate about building great web applications, feel
-                free to reach out!
-              </p>
-
-              <ul className="list-inside list-disc">
+          <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start">
+            <div className="flex flex-col">
+              <Image
+                src={pp}
+                alt="Me"
+                className="mb-8 h-32 w-32 rounded-full"
+              />
+              <ul className="flex gap-2">
                 <li>
-                  <Link href="https://github.com/pirey" className="underline">
-                    Github
+                  <Link href="https://github.com/pirey">
+                    <ContactIcon>
+                      <Github />
+                    </ContactIcon>
                   </Link>
                 </li>
                 <li className="col">
-                  <Link
-                    href="https://www.linkedin.com/in/yeri-pratama/"
-                    className="underline"
-                  >
-                    LinkedIn
+                  <Link href="https://www.linkedin.com/in/yeri-pratama/">
+                    <ContactIcon>
+                      <LinkedIn />
+                    </ContactIcon>
                   </Link>
                 </li>
                 <li className="col">
-                  <Link href="https://twitter.com/_pirey" className="underline">
-                    Twitter
+                  <Link href="https://twitter.com/_pirey">
+                    <ContactIcon>
+                      <Twitter />
+                    </ContactIcon>
                   </Link>
                 </li>
                 <li className="col">
-                  <Link
-                    href="mailto:mail@yeripratama.com?subject=Hello"
-                    className="underline"
-                  >
-                    Email
+                  <Link href="mailto:mail@yeripratama.com?subject=Hello">
+                    <ContactIcon>
+                      <Envelope />
+                    </ContactIcon>
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div>
+              <p className="mb-6">
+                I&apos;m a software developer with a strong focus on web app
+                development.
+              </p>
+
+              <div className="mb-6">
+                <p>I am comfortable to work on projects using:</p>
+
+                <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
+                  <LabelBadge>JavaScript / TypeScript / NextJS</LabelBadge>
+                  <LabelBadge>Python / Flask</LabelBadge>
+                  <LabelBadge>PHP / Laravel</LabelBadge>
+                  <LabelBadge>SQL</LabelBadge>
+                  <LabelBadge>React</LabelBadge>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <p>I have previously work using the following tech:</p>
+
+                <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
+                  <LabelBadge>Go</LabelBadge>
+                  <LabelBadge>Ruby</LabelBadge>
+                  <LabelBadge>React Native</LabelBadge>
+                  <LabelBadge>AngularJS</LabelBadge>
+                  <LabelBadge>Ionic Framework</LabelBadge>
+                  <LabelBadge>ElasticSearch</LabelBadge>
+                  <LabelBadge>Redis</LabelBadge>
+                </div>
+              </div>
             </div>
           </div>
         </div>

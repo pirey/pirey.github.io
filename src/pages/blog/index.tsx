@@ -1,4 +1,5 @@
 import { Content } from "@/components/content";
+import { Heading } from "@/components/heading";
 import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { getSortedPosts, PostData } from "@/shared/blog";
@@ -26,10 +27,10 @@ export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
       </Head>
       <TopNavBar />
       <Content>
-        <h2 className="text-2xl font-black">Blog</h2>
+        <Heading>Blog</Heading>
         <ul className="flex flex-col gap-y-10 py-10">
           {props.allPostData.map((post) => (
-            <li key={post.slug}>
+            <li role="article" key={post.slug}>
               <Link className="font-bold" href={`/blog/${post.slug}`}>
                 {post.metadata.title}
               </Link>

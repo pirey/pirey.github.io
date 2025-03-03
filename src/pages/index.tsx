@@ -1,4 +1,5 @@
 import { Content } from "@/components/content";
+import { Heading } from "@/components/heading";
 import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import Head from "next/head";
@@ -11,7 +12,7 @@ export default function HomePage() {
       </Head>
       <TopNavBar />
       <Content>
-        <h2 className="text-2xl font-black">Teal</h2>
+        <Heading>Teal</Heading>
         <div className="py-10">
           Not blue, nor green, but something in between.
         </div>

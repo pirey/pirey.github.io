@@ -73,10 +73,10 @@ export default function BlogPostPage({ post }: { post: PostData }) {
         <Link href="/blog" className="block pt-4 underline">
           ← All posts
         </Link>
-        <div
+        <article
           className="post-content max-w-2xl pt-10"
           dangerouslySetInnerHTML={{ __html: withStyle(post.contentHtml) }}
-        ></div>
+        ></article>
         <Link href="/blog" className="underline">
           ← All posts
         </Link>
