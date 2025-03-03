@@ -49,7 +49,7 @@ const projects: Project[] = [
       "AngularJS",
     ],
     description:
-      "A chat platform that lets you provide realtime chat support for your customers. This project includes a pluggable chat widget for customers, and web dashboard for internal users.",
+      "A chat platform that lets you provide realtime chat support for your customers.",
     images: [
       {
         orientation: "landscape",
@@ -68,7 +68,8 @@ const projects: Project[] = [
         url: "https://idwebhost.com",
       },
     ],
-    roleDescription: "",
+    roleDescription:
+      "I built chat dashboard for agents to handle incoming chats from end users using NodeJS—Express with socket.io for duplex communication, Elasticsearch for fast message searching, and MySQL as persistent storage. I also built the embeddable chat widget using AngularJS.",
     slug: "chatonomy",
     year: "2017",
   },
@@ -285,7 +286,7 @@ const projects: Project[] = [
       },
     ],
     roleDescription:
-      "Design and analyze system requirements. Build telegram bot for employer to submit job vacancies, and pay fees with telegram payment API. Build web dashboard to manage job submissions.",
+      "I designed and analyzed the system requirements. I built the telegram bot for employer to submit job vacancies, and pay fees with telegram payment API. I also built the web dashboard to manage job submissions.",
     slug: "job-board",
     year: "2020",
   },
