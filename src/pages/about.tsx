@@ -7,20 +7,13 @@ import pp from "@/assets/pp.jpg";
 import Link from "next/link";
 import { Envelope, Github, LinkedIn, Twitter } from "@/components/icons";
 import { Heading } from "@/components/heading";
+import { LabelBadge } from "@/components/badge";
 
 function ContactIcon({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-700/40 text-gray-700">
       {children}
     </div>
-  );
-}
-
-function LabelBadge({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-block rounded-sm bg-gray-500 px-2 font-bold text-white">
-      {children}
-    </span>
   );
 }
 
@@ -87,6 +80,7 @@ export default function AboutPage() {
                   <LabelBadge>PHP / Laravel</LabelBadge>
                   <LabelBadge>SQL</LabelBadge>
                   <LabelBadge>React</LabelBadge>
+                  <LabelBadge>TailwindCSS</LabelBadge>
                 </div>
               </div>
 
