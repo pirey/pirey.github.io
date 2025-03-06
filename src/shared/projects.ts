@@ -18,6 +18,8 @@ import uruglasses from "@/assets/projects/uruglasses/uruglasses.png";
 import whConsumerWeb from "@/assets/projects/wh-consumer-web/whatshalal-consumer-web.jpg";
 import whICODashboard from "@/assets/projects/wh-tsp/wh-ico-dashboard.png";
 import whICO from "@/assets/projects/wh-tsp/wh-ico.png";
+import komoditasHome from "@/assets/projects/komoditas-pasar/homepage.png";
+import komoditasStatistic from "@/assets/projects/komoditas-pasar/statistic.png";
 import { StaticImageData } from "next/image";
 
 export type Project = {
@@ -37,6 +39,29 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "Komoditas Pasar Madiun",
+    description:
+      "Web portal for monitoring commodity prices in Madiun regency.",
+    tags: ["Laravel", "MySQL", "TailwindCSS"],
+    role: "Fullstack Developer",
+    roleDescription:
+      "Responsible for translating UI mockup into fully functioning web pages along with the backend task to provide the data.",
+    images: [
+      {
+        orientation: "portrait",
+        alt: "Homepage",
+        src: komoditasHome,
+      },
+      {
+        orientation: "portrait",
+        alt: "Statistic",
+        src: komoditasStatistic,
+      },
+    ],
+    slug: "komoditas-pasar-madiun",
+    year: "2024",
+  },
   {
     title: "Chatonomy",
     role: "Fullstack Developer",
