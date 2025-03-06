@@ -61,18 +61,16 @@ export default function ProjectPage({ project }: { project: Project }) {
           <div className="flex gap-x-2 gap-y-1 pt-2">
             <span>Links:</span>
             {project.links.map((link, i) => (
-              <>
-                <a
-                  key={link.url}
-                  href={link.url}
-                  className="underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.label}
-                  {i < Number(project.links?.length) - 1 ? ", " : ""}
-                </a>
-              </>
+              <a
+                key={link.url}
+                href={link.url}
+                className="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label}
+                {i < Number(project.links?.length) - 1 ? ", " : ""}
+              </a>
             ))}
           </div>
         )}
@@ -89,6 +87,7 @@ export default function ProjectPage({ project }: { project: Project }) {
           {project.images.map((img) => (
             <figure key={img.alt} className="text-center">
               <Image
+                priority
                 src={img.src}
                 alt={img.alt}
                 className="rounded-lg shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
