@@ -21,6 +21,13 @@ import whICO from "@/assets/projects/wh-tsp/wh-ico.webp";
 import komoditasHome from "@/assets/projects/komoditas-pasar/homepage.webp";
 import komoditasStatistic from "@/assets/projects/komoditas-pasar/statistic.webp";
 import maviapulsa from "@/assets/projects/maviapulsa/landing.webp";
+import mgHome from "@/assets/projects/mitragamers/mg-home.webp";
+import mgTopup from "@/assets/projects/mitragamers/mg-topup.webp";
+import mgJoki from "@/assets/projects/mitragamers/mg-joki.webp";
+import mgAkun from "@/assets/projects/mitragamers/mg-akun.webp";
+import mgLogin from "@/assets/projects/mitragamers/mg-login.webp";
+import mgDashboard from "@/assets/projects/mitragamers/mg-dashboard.webp";
+import mgCustomTheme from "@/assets/projects/mitragamers/mg-custom-theme.webp";
 import { StaticImageData } from "next/image";
 
 export type Project = {
@@ -40,6 +47,59 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "MitraGamers Client Website",
+    description:
+      "Platform which enable clients to sell various game topup service.",
+    tags: ["NextJS", "TailwindCSS"],
+    role: "Frontend Developer",
+    roleDescription: "Build a customizable website for MitraGamers clients.",
+    images: [
+      {
+        orientation: "portrait",
+        alt: "Homepage",
+        src: mgHome,
+      },
+      {
+        orientation: "portrait",
+        alt: "Topup",
+        src: mgTopup,
+      },
+      {
+        orientation: "portrait",
+        alt: "Joki Mobile Legends",
+        src: mgJoki,
+      },
+      {
+        orientation: "portrait",
+        alt: "Buy Game Account",
+        src: mgAkun,
+      },
+      {
+        orientation: "landscape",
+        alt: "Login",
+        src: mgLogin,
+      },
+      {
+        orientation: "portrait",
+        src: mgDashboard,
+        alt: "Dashboard",
+      },
+      {
+        orientation: "portrait",
+        src: mgCustomTheme,
+        alt: "Custom Theme",
+      },
+    ],
+    slug: "mitragamers",
+    year: "2024",
+    links: [
+      {
+        label: "mitragamers",
+        url: "https://demo.mitragamers.com",
+      },
+    ],
+  },
   {
     title: "Maviapulsa",
     description: "Platform to convert phone credit (pulsa) into cash.",
