@@ -42,7 +42,7 @@ export default function ProjectPage({ project }: { project: Project }) {
   return (
     <>
       <Head>
-        <title>{`${project.title} | ${PAGE_TITLE}`}</title>
+        <title>{`Project ${project.title} | ${PAGE_TITLE}`}</title>
       </Head>
       <TopNavBar />
       <section className="mx-auto max-w-3xl px-4 pt-4">
