@@ -28,7 +28,17 @@ import mgAkun from "@/assets/projects/mitragamers/mg-akun.webp";
 import mgLogin from "@/assets/projects/mitragamers/mg-login.webp";
 import mgDashboard from "@/assets/projects/mitragamers/mg-dashboard.webp";
 import mgCustomTheme from "@/assets/projects/mitragamers/mg-custom-theme.webp";
+import sureProjectList from "@/assets/projects/project-management/sure-project-list.webp";
+import surePlanDetail from "@/assets/projects/project-management/sure-plan-detail.webp";
+import surePlanList from "@/assets/projects/project-management/sure-plan-list.webp";
+import sureProjectSetting from "@/assets/projects/project-management/sure-project-setting.webp";
+import sureUserManagement from "@/assets/projects/project-management/sure-user-management.webp";
 import { StaticImageData } from "next/image";
+
+export type ProjectClient = {
+  name: string;
+  url?: string;
+};
 
 export type Project = {
   title: string;
@@ -44,9 +54,50 @@ export type Project = {
     src: StaticImageData;
   }[];
   links?: { label: string; url: string }[];
+  client?: ProjectClient;
 };
 
 const projects: Project[] = [
+  {
+    title: "Construction Project Management",
+    description: "A collaborative tool for planning construction projects",
+    tags: ["Laravel", "TailwindCSS", "MySQL", "ReactJS"],
+    role: "Fullstack Developer",
+    roleDescription: "",
+    images: [
+      {
+        orientation: "landscape",
+        alt: "Project List",
+        src: sureProjectList,
+      },
+      {
+        orientation: "landscape",
+        alt: "Plan List",
+        src: surePlanList,
+      },
+      {
+        orientation: "landscape",
+        alt: "Plan Detail",
+        src: surePlanDetail,
+      },
+      {
+        orientation: "landscape",
+        alt: "Project Setting",
+        src: sureProjectSetting,
+      },
+      {
+        orientation: "landscape",
+        alt: "User Management",
+        src: sureUserManagement,
+      },
+    ],
+    slug: "project-management",
+    year: "2023",
+    client: {
+      name: "PT. Sinergi Inti Teknovasi",
+      url: "https://sintitek.co.id",
+    },
+  },
   {
     title: "MitraGamers Client Website",
     description:
@@ -99,6 +150,10 @@ const projects: Project[] = [
         url: "https://demo.mitragamers.com",
       },
     ],
+    client: {
+      name: "PT Mitragamers Teknologi.",
+      url: "https://mitragamers.com",
+    },
   },
   {
     title: "Maviapulsa",
@@ -122,6 +177,10 @@ const projects: Project[] = [
         url: "https://maviapulsa.com",
       },
     ],
+    client: {
+      name: "Maviapulsa",
+      url: "https://maviapulsa.com",
+    },
   },
   {
     title: "Komoditas Pasar Madiun",
@@ -398,6 +457,10 @@ const projects: Project[] = [
       "I designed and analyzed the system requirements. I built the telegram bot for employer to submit job vacancies, and pay fees with telegram payment API. I also built the web dashboard to manage job submissions.",
     slug: "job-board",
     year: "2020",
+    client: {
+      name: "NEXT3LABS PTE. LTD.",
+      url: "https://recordowl.com/company/next3labs-pte-ltd",
+    },
   },
 ];
 export const sortedProjects = projects.sort(

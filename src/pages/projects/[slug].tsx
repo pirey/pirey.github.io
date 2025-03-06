@@ -48,6 +48,19 @@ export default function ProjectPage({ project }: { project: Project }) {
       <section className="mx-auto max-w-3xl px-4 pt-4">
         <h2 className="text-2xl font-black">{project.title}</h2>
         <p className="text-sm">{project.year}</p>
+        {project.client &&
+          (project.client.url ? (
+            <a
+              href={project.client.url}
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.client.name}
+            </a>
+          ) : (
+            <p>{project.client.name}</p>
+          ))}
         <Link href="/projects" className="block pt-4 underline">
           ← All projects
         </Link>
