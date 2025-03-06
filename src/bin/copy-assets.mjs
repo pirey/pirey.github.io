@@ -14,7 +14,13 @@ async function createPostAssetFoldersForCopy() {
   const postSlugs = await fsPromises.readdir(postsDir);
 
   for (const slug of postSlugs) {
-    const allowedAssetFileExtensions = [".png", ".jpg", ".jpeg", ".gif"];
+    const allowedAssetFileExtensions = [
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".gif",
+      ".webp",
+    ];
 
     // Read all files inside current post folder
     const postDirFiles = await fsPromises.readdir(`${postsDir}/${slug}`);

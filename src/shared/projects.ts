@@ -1,25 +1,26 @@
-import chatonomyWidget from "@/assets/projects/chatonomy/chat-widget.png";
-import chatonomy from "@/assets/projects/chatonomy/chatonomy.png";
-import dashing from "@/assets/projects/dashing/dashing.png";
-import distributor from "@/assets/projects/distributor/distributor.png";
-import inibakatkuFrontpage from "@/assets/projects/inibakatku/frontpage.png";
-import inibakatkuRegistration from "@/assets/projects/inibakatku/registration.png";
-import inibakatkuTestInstruction from "@/assets/projects/inibakatku/test-instruction.png";
-import inibakatkuTestmain from "@/assets/projects/inibakatku/test-main.png";
-import inibakatkuTest from "@/assets/projects/inibakatku/test.png";
-import jejualanFb from "@/assets/projects/jejualan-fb/jejualan-fb.png";
-import jejualanMobile2 from "@/assets/projects/jejualan-mobile/jejualan-mobile-2.png";
-import jejualanMobile from "@/assets/projects/jejualan-mobile/jejualan-mobile.png";
-import oliviaBot from "@/assets/projects/olivia/olivia-bot.png";
-import oliviaWebDashboard from "@/assets/projects/olivia/web-dashboard.png";
-import ongkirku2 from "@/assets/projects/ongkirku/ongkirku-2.png";
-import ongkirku from "@/assets/projects/ongkirku/ongkirku.png";
-import uruglasses from "@/assets/projects/uruglasses/uruglasses.png";
-import whConsumerWeb from "@/assets/projects/wh-consumer-web/whatshalal-consumer-web.jpg";
-import whICODashboard from "@/assets/projects/wh-tsp/wh-ico-dashboard.png";
-import whICO from "@/assets/projects/wh-tsp/wh-ico.png";
-import komoditasHome from "@/assets/projects/komoditas-pasar/homepage.png";
-import komoditasStatistic from "@/assets/projects/komoditas-pasar/statistic.png";
+import chatonomyWidget from "@/assets/projects/chatonomy/chat-widget.webp";
+import chatonomy from "@/assets/projects/chatonomy/chatonomy.webp";
+import dashing from "@/assets/projects/dashing/dashing.webp";
+import distributor from "@/assets/projects/distributor/distributor.webp";
+import inibakatkuFrontpage from "@/assets/projects/inibakatku/frontpage.webp";
+import inibakatkuRegistration from "@/assets/projects/inibakatku/registration.webp";
+import inibakatkuTestInstruction from "@/assets/projects/inibakatku/test-instruction.webp";
+import inibakatkuTestmain from "@/assets/projects/inibakatku/test-main.webp";
+import inibakatkuTest from "@/assets/projects/inibakatku/test.webp";
+import jejualanFb from "@/assets/projects/jejualan-fb/jejualan-fb.webp";
+import jejualanMobile2 from "@/assets/projects/jejualan-mobile/jejualan-mobile-2.webp";
+import jejualanMobile from "@/assets/projects/jejualan-mobile/jejualan-mobile.webp";
+import oliviaBot from "@/assets/projects/olivia/olivia-bot.webp";
+import oliviaWebDashboard from "@/assets/projects/olivia/web-dashboard.webp";
+import ongkirku2 from "@/assets/projects/ongkirku/ongkirku-2.webp";
+import ongkirku from "@/assets/projects/ongkirku/ongkirku.webp";
+import uruglasses from "@/assets/projects/uruglasses/uruglasses.webp";
+import whConsumerWeb from "@/assets/projects/wh-consumer-web/whatshalal-consumer-web.webp";
+import whICODashboard from "@/assets/projects/wh-tsp/wh-ico-dashboard.webp";
+import whICO from "@/assets/projects/wh-tsp/wh-ico.webp";
+import komoditasHome from "@/assets/projects/komoditas-pasar/homepage.webp";
+import komoditasStatistic from "@/assets/projects/komoditas-pasar/statistic.webp";
+import maviapulsa from "@/assets/projects/maviapulsa/landing.webp";
 import { StaticImageData } from "next/image";
 
 export type Project = {
@@ -39,6 +40,29 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "Maviapulsa",
+    description: "Platform to convert phone credit (pulsa) into cash.",
+    tags: ["NextJS", "TailwindCSS"],
+    role: "Fullstack Developer",
+    roleDescription:
+      "Responsible for translating UI mockup into fully functioning web pages along with the backend task to provide the data.",
+    images: [
+      {
+        orientation: "portrait",
+        alt: "Homepage",
+        src: maviapulsa,
+      },
+    ],
+    slug: "maviapulsa",
+    year: "2024",
+    links: [
+      {
+        label: "maviapulsa",
+        url: "https://maviapulsa.com",
+      },
+    ],
+  },
   {
     title: "Komoditas Pasar Madiun",
     description:
