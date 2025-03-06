@@ -92,7 +92,7 @@ const projects: Project[] = [
       },
     ],
     slug: "mitragamers",
-    year: "2024",
+    year: "2025",
     links: [
       {
         label: "mitragamers",
