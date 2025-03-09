@@ -5,6 +5,7 @@ import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { Project, sortedProjects } from "@/shared/projects";
 import Head from "next/head";
+// import Image from "next/image";
 import Link from "next/link";
 
 export default function ProjectsPage() {
@@ -45,6 +46,13 @@ function ProjectListItem({ project }: { project: Project }) {
           <LabelBadge key={tag}>{tag}</LabelBadge>
         ))}
       </div>
+      {/* <div className="pt-10"> */}
+      {/*   <Image */}
+      {/*     src={project.images[0].src} */}
+      {/*     alt={project.title} */}
+      {/*     className="rounded-lg shadow-sm" */}
+      {/*   /> */}
+      {/* </div> */}
     </>
   );
 }
