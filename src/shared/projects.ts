@@ -33,6 +33,10 @@ import surePlanDetail from "@/assets/projects/project-management/sure-plan-detai
 import surePlanList from "@/assets/projects/project-management/sure-plan-list.webp";
 import sureProjectSetting from "@/assets/projects/project-management/sure-project-setting.webp";
 import sureUserManagement from "@/assets/projects/project-management/sure-user-management.webp";
+import vpChatPage from "@/assets/projects/viapulsa-chat/vp-chat-page.webp";
+import vpChatFilter from "@/assets/projects/viapulsa-chat/vp-chat-filter.webp";
+import vpChatShortcuts from "@/assets/projects/viapulsa-chat/vp-chat-shortcuts.webp";
+import vpChatLogin from "@/assets/projects/viapulsa-chat/vp-chat-login.webp";
 import { StaticImageData } from "next/image";
 
 export type ProjectClient = {
@@ -58,6 +62,49 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "Viapulsa Customer Chat Panel",
+    description:
+      "Chat panel for Viapulsa agents to handle customer realtime chats",
+    tags: ["ReactJS", "Material UI"],
+    role: "Frontend Developer",
+    roleDescription:
+      "The chat panel allowed Viapulsa agents to manage and respond to customer inquiries efficiently, streamlining communication and support.",
+    images: [
+      {
+        orientation: "landscape",
+        alt: "Chat Page",
+        src: vpChatPage,
+      },
+      {
+        orientation: "landscape",
+        alt: "Chat Page",
+        src: vpChatFilter,
+      },
+      {
+        orientation: "landscape",
+        alt: "Chat Shortcuts",
+        src: vpChatShortcuts,
+      },
+      {
+        orientation: "landscape",
+        alt: "Login",
+        src: vpChatLogin,
+      },
+    ],
+    slug: "viapulsa-customer-chat-panel",
+    year: "2025",
+    links: [
+      {
+        label: "viapulsa",
+        url: "https://chat.viapulsa.id",
+      },
+    ],
+    client: {
+      name: "Viapulsa",
+      url: "https://viapulsa.co.id",
+    },
+  },
   {
     title: "Construction Project Management",
     description: "A collaborative tool for planning construction projects",
