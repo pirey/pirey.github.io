@@ -21,7 +21,6 @@ export default function HomePage(props: {
   latestPost: PostData;
   latestProject: Project;
 }) {
-  console.log({ props });
   return (
     <>
       <Head>
