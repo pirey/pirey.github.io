@@ -1,7 +1,7 @@
 ---
 title: GitHub pages domain takeover
 date: 2025-03-02T10:31:45
-description: How some shady website was deployed under my domain using GitHub pages.
+description: Some shady website was deployed under my domain using GitHub pages.
 ---
 
 Earlier this morning, someone out of nowhere deployed some ridiculously shady website under my domain name.
@@ -38,7 +38,7 @@ Behold: a poorly crafted gambling website targeted for people with poor judgemen
 
 I believe that was done using some automated bot or something similar, because it happened not long after I deleted my GitHub repository that has the custom domain configuration.
 
-Naturally, I tried to regain control over my domain name by configuring custom domain in my repository, but GitHub has the audacity to display error message saying the domain has already been taken.
+Naturally, I tried to regain control over my domain name by configuring custom domain in my repository, but to my surprise, GitHub displays an error message saying that the domain has already been taken.
 
 It was at this moment I realized that apparently my blog has been hosted without domain verification.
 

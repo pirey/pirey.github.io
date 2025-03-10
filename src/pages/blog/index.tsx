@@ -31,13 +31,16 @@ export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
         <ul className="flex flex-col gap-y-10 py-10">
           {props.allPostData.map((post) => (
             <li role="article" key={post.slug}>
-              <Link className="font-bold" href={`/blog/${post.slug}`}>
-                {post.metadata.title}
+              <Link
+                aria-label={post.metadata.title}
+                href={`/blog/${post.slug}`}
+              >
+                <p className="font-bold">{post.metadata.title}</p>
+                <p className="text-sm">
+                  {formatDate(new Date(post.metadata.date))}
+                </p>
+                <p>{post.metadata.description}</p>
               </Link>
-              <p className="text-sm">
-                {formatDate(new Date(post.metadata.date))}
-              </p>
-              <p>{post.metadata.description}</p>
             </li>
           ))}
         </ul>

@@ -1,2 +1,2 @@
 ** TODO dark mode theme
-** TODO adjust color
+** TODO design token

@@ -5,7 +5,7 @@ import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { Project, sortedProjects } from "@/shared/projects";
 import Head from "next/head";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProjectsPage() {
@@ -33,26 +33,29 @@ export default function ProjectsPage() {
 
 function ProjectListItem({ project }: { project: Project }) {
   return (
-    <>
-      <Link className="font-bold" href={`/projects/${project.slug}`}>
-        {project.title}
-      </Link>
-      <p className="text-sm">
-        <span className="italic">{project.role}</span> — {project.year}
-      </p>
-      <p>{project.description}</p>
-      <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
-        {project.tags.map((tag) => (
-          <LabelBadge key={tag}>{tag}</LabelBadge>
-        ))}
+    <Link
+      aria-label={project.title}
+      href={`/projects/${project.slug}`}
+      className="group flex justify-between gap-x-10"
+    >
+      <div>
+        <p className="font-bold">{project.title}</p>
+        <p className="text-sm">
+          <span className="italic">{project.role}</span> — {project.year}
+        </p>
+        <p>{project.description}</p>
+        <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
+          {project.tags.map((tag) => (
+            <LabelBadge key={tag}>{tag}</LabelBadge>
+          ))}
+        </div>
       </div>
-      {/* <div className="pt-10"> */}
-      {/*   <Image */}
-      {/*     src={project.images[0].src} */}
-      {/*     alt={project.title} */}
-      {/*     className="rounded-lg shadow-sm" */}
-      {/*   /> */}
-      {/* </div> */}
-    </>
+
+      <Image
+        src={project.images[0].src}
+        alt={project.title}
+        className="hidden h-24 w-32 rounded-sm object-cover object-top shadow-sm grayscale group-hover:grayscale-0 sm:inline-flex"
+      />
+    </Link>
   );
 }

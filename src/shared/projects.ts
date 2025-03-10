@@ -114,8 +114,8 @@ const projects: Project[] = [
     images: [
       {
         orientation: "landscape",
-        alt: "Project List",
-        src: sureProjectList,
+        alt: "Plan Detail",
+        src: surePlanDetail,
       },
       {
         orientation: "landscape",
@@ -124,8 +124,8 @@ const projects: Project[] = [
       },
       {
         orientation: "landscape",
-        alt: "Plan Detail",
-        src: surePlanDetail,
+        alt: "Project List",
+        src: sureProjectList,
       },
       {
         orientation: "landscape",
