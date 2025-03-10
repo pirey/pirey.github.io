@@ -35,10 +35,10 @@ export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
                 aria-label={post.metadata.title}
                 href={`/blog/${post.slug}`}
               >
-                <p className="font-bold">{post.metadata.title}</p>
-                <p className="text-sm">
+                <h3 className="font-bold">{post.metadata.title}</h3>
+                <h4 className="text-sm">
                   {formatDate(new Date(post.metadata.date))}
-                </p>
+                </h4>
                 <p>{post.metadata.description}</p>
               </Link>
             </li>

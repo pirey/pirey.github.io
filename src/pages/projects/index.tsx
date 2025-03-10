@@ -39,10 +39,10 @@ function ProjectListItem({ project }: { project: Project }) {
       className="group flex justify-between gap-x-10"
     >
       <div>
-        <p className="font-bold">{project.title}</p>
-        <p className="text-sm">
+        <h3 className="font-bold">{project.title}</h3>
+        <h4 className="text-sm">
           <span className="italic">{project.role}</span> — {project.year}
-        </p>
+        </h4>
         <p>{project.description}</p>
         <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
           {project.tags.map((tag) => (

@@ -47,7 +47,7 @@ export default function ProjectPage({ project }: { project: Project }) {
       <TopNavBar />
       <section className="mx-auto max-w-3xl px-4 pt-4">
         <h2 className="text-2xl font-black">{project.title}</h2>
-        <p className="text-sm">{project.year}</p>
+        <h4 className="text-sm">{project.year}</h4>
         {project.client &&
           (project.client.url ? (
             <a
@@ -56,10 +56,10 @@ export default function ProjectPage({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {project.client.name}
+              <h4>{project.client.name}</h4>
             </a>
           ) : (
-            <p>{project.client.name}</p>
+            <h4>{project.client.name}</h4>
           ))}
         <Link href="/projects" className="block pt-4 underline">
           ← All projects
