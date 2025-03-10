@@ -198,7 +198,7 @@ const projects: Project[] = [
       },
     ],
     client: {
-      name: "PT Mitragamers Teknologi.",
+      name: "Mitragamers",
       url: "https://mitragamers.com",
     },
   },

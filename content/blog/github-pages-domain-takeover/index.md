@@ -32,7 +32,7 @@ Little did I know, that repository was holding the only thing that tied my domai
 
 Right after that, before I had the chance to finish the setup for the new repository, I went away to check on my website and I was humiliated with what I saw.
 
-Behold: a relatively ugly gambling website targeted for people with poor judgement!
+Behold: a poorly crafted gambling website targeted for people with poor judgement!
 
 ![silly](./shady-gambling-website.jpeg)
 
