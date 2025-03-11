@@ -1,4 +1,5 @@
 import { LabelBadge, LabelBadgeList } from "@/components/badge";
+import { Content } from "@/components/content";
 import { Footer } from "@/components/footer";
 import { PageLayout } from "@/components/layout";
 import { TopNavBar } from "@/components/navbar";
@@ -47,7 +48,7 @@ export default function ProjectPage({ project }: { project: Project }) {
         <title>{`Project ${project.title} | ${PAGE_TITLE}`}</title>
       </Head>
       <TopNavBar />
-      <section className="mx-auto max-w-3xl px-4 pt-4">
+      <Content>
         <h2 className="text-2xl font-black">{project.title}</h2>
         <h4 className="text-sm">{project.year}</h4>
         {project.client &&
@@ -113,7 +114,7 @@ export default function ProjectPage({ project }: { project: Project }) {
             </figure>
           ))}
         </div>
-      </section>
+      </Content>
       <Footer />
     </PageLayout>
   );

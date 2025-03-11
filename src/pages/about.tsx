@@ -28,14 +28,10 @@ export default function AboutPage() {
       <Content>
         <Heading>About Me</Heading>
         <div className="py-10">
-          <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start">
+          <div className="flex flex-col items-center gap-10 sm:items-start">
             <section id="info">
               <div className="flex flex-col">
-                <Image
-                  src={pp}
-                  alt="Me"
-                  className="transition-grayscale h-32 w-32 rounded-full grayscale duration-300 hover:grayscale-[33.3333%]"
-                />
+                <Image src={pp} alt="Me" className="h-32 w-32 rounded-full" />
                 <ul className="flex gap-2 pt-8">
                   <li>
                     <a
