@@ -32,9 +32,9 @@ export default function AboutPage() {
                 <Image
                   src={pp}
                   alt="Me"
-                  className="mb-8 h-32 w-32 rounded-full"
+                  className="transition-grayscale h-32 w-32 rounded-full grayscale duration-300 hover:grayscale-[33.3333%]"
                 />
-                <ul className="flex gap-2">
+                <ul className="flex gap-2 pt-8">
                   <li>
                     <a
                       href="https://github.com/pirey"
@@ -79,15 +79,15 @@ export default function AboutPage() {
               </div>
             </section>
             <section id="content">
-              <p className="mb-6">
+              <p>
                 I&apos;m a software developer with a strong focus on web app
                 development.
               </p>
 
-              <article>
-                <h3 className="mb-4 font-bold">Tech Stack</h3>
+              <article className="pt-10">
+                <h3 className="font-bold">Tech Stack</h3>
 
-                <div className="mb-6">
+                <div className="pt-4">
                   <p>I am comfortable to work on projects using:</p>
 
                   <LabelBadgeList>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                   </LabelBadgeList>
                 </div>
 
-                <div className="mb-6">
+                <div className="pt-4">
                   <p>I have previously work using the following tech:</p>
 
                   <LabelBadgeList>
@@ -115,9 +115,14 @@ export default function AboutPage() {
                 </div>
               </article>
 
-              <article>
-                <h3 className="mb-4 font-bold">Work</h3>
-                <ul className="list-inside list-disc">
+              <article className="pt-10">
+                <h3 className="font-bold">Work</h3>
+
+                <p className="pt-4">
+                  I have worked professionally at the following companies:
+                </p>
+
+                <ul className="list-inside list-disc pt-4">
                   <li>2014-2018 IDwebhost</li>
                   <li>2018-2019 WhatsHalal</li>
                   <li>2019-2021 Pener ID</li>

@@ -61,3 +61,13 @@ export function BlogPost({ post }: { post: PostData }) {
     </>
   );
 }
+
+export function BlogPostItem({ post }: { post: PostData }) {
+  return (
+    <Link aria-label={post.metadata.title} href={`/blog/${post.slug}`}>
+      <h3 className="font-bold">{post.metadata.title}</h3>
+      <h4 className="text-sm">{formatDate(new Date(post.metadata.date))}</h4>
+      <p>{post.metadata.description}</p>
+    </Link>
+  );
+}
