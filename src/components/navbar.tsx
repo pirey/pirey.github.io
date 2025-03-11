@@ -47,14 +47,8 @@ export function TopNavBar() {
               className="rounded-full"
             />
             <h2 className="text-xl font-bold" aria-label={PAGE_TITLE}>
-              <span aria-hidden className="hidden sm:inline">
+              <span aria-hidden className="">
                 {PAGE_TITLE}
-              </span>
-              <span aria-hidden className="inline sm:hidden">
-                {PAGE_TITLE.split(" ")
-                  .map((s) => s[0])
-                  .join("")
-                  .toUpperCase()}
               </span>
             </h2>
           </Link>

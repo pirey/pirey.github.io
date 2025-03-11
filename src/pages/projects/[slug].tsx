@@ -1,4 +1,6 @@
 import { LabelBadge, LabelBadgeList } from "@/components/badge";
+import { Footer } from "@/components/footer";
+import { PageLayout } from "@/components/layout";
 import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { Project, sortedProjects } from "@/shared/projects";
@@ -40,7 +42,7 @@ export const getStaticProps: GetStaticProps<{
 
 export default function ProjectPage({ project }: { project: Project }) {
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{`Project ${project.title} | ${PAGE_TITLE}`}</title>
       </Head>
@@ -112,6 +114,7 @@ export default function ProjectPage({ project }: { project: Project }) {
           ))}
         </div>
       </section>
-    </>
+      <Footer />
+    </PageLayout>
   );
 }

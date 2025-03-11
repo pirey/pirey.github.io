@@ -7,6 +7,8 @@ import pp from "@/assets/pp.jpg";
 import { Envelope, Github, LinkedIn, Twitter } from "@/components/icons";
 import { Heading } from "@/components/heading";
 import { LabelBadge, LabelBadgeList } from "@/components/badge";
+import { PageLayout } from "@/components/layout";
+import { Footer } from "@/components/footer";
 
 function ContactIcon({ children }: { children: React.ReactNode }) {
   return (
@@ -18,7 +20,7 @@ function ContactIcon({ children }: { children: React.ReactNode }) {
 
 export default function AboutPage() {
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{PAGE_TITLE}</title>
       </Head>
@@ -138,6 +140,7 @@ export default function AboutPage() {
           </div>
         </div>
       </Content>
-    </>
+      <Footer />
+    </PageLayout>
   );
 }

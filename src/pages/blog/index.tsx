@@ -1,6 +1,8 @@
 import { BlogPostItem } from "@/components/blog";
 import { Content } from "@/components/content";
+import { Footer } from "@/components/footer";
 import { Heading } from "@/components/heading";
+import { PageLayout } from "@/components/layout";
 import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { getSortedPosts, PostData } from "@/shared/blog";
@@ -20,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{`Blog | ${PAGE_TITLE}`}</title>
       </Head>
@@ -35,6 +37,7 @@ export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
           ))}
         </ul>
       </Content>
-    </>
+      <Footer />
+    </PageLayout>
   );
 }

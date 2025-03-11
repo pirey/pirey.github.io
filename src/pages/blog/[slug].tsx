@@ -1,5 +1,7 @@
 import { BlogPost } from "@/components/blog";
 import { Content } from "@/components/content";
+import { Footer } from "@/components/footer";
+import { PageLayout } from "@/components/layout";
 import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
 import { getAllPostSlugs, getPostData, PostData } from "@/shared/blog";
@@ -39,7 +41,7 @@ export const getStaticProps: GetStaticProps<{
 
 export default function BlogPostPage({ post }: { post: PostData }) {
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{`${post.metadata.title} | ${PAGE_TITLE}`}</title>
       </Head>
@@ -47,6 +49,7 @@ export default function BlogPostPage({ post }: { post: PostData }) {
       <Content>
         <BlogPost post={post} />
       </Content>
-    </>
+      <Footer />
+    </PageLayout>
   );
 }

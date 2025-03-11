@@ -1,6 +1,8 @@
 import { BlogPostItem } from "@/components/blog";
 import { Content } from "@/components/content";
+import { Footer } from "@/components/footer";
 import { Heading } from "@/components/heading";
+import { PageLayout } from "@/components/layout";
 import { TopNavBar } from "@/components/navbar";
 import { ProjectListItem } from "@/components/project";
 import { PAGE_TITLE } from "@/constants";
@@ -21,14 +23,14 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function HomePage(props: { allPostData: PostData[] }) {
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{PAGE_TITLE}</title>
       </Head>
       <TopNavBar />
       <Content>
         <Heading>Latest Post</Heading>
-        <ul className="flex flex-col gap-y-10 pt-10">
+        <ul className="flex flex-col gap-y-10 pt-4">
           {props.allPostData.slice(0, 3).map((post) => (
             <li role="article" key={post.slug}>
               <BlogPostItem post={post} />
@@ -36,12 +38,12 @@ export default function HomePage(props: { allPostData: PostData[] }) {
           ))}
         </ul>
 
-        <Link href="/blog" className="block pt-6 pb-10 underline">
-          View all posts →
+        <Link href="/blog" className="block pt-10 underline">
+          View {props.allPostData.length - 3} more posts →
         </Link>
 
-        <Heading>Latest Projects</Heading>
-        <ul className="flex flex-col gap-y-10 pt-10">
+        <Heading className="pt-10">Latest Projects</Heading>
+        <ul className="flex flex-col gap-y-10 pt-4">
           {sortedProjects.slice(0, 3).map((project) => (
             <li role="article" key={project.slug}>
               <ProjectListItem project={project} />
@@ -49,10 +51,11 @@ export default function HomePage(props: { allPostData: PostData[] }) {
           ))}
         </ul>
 
-        <Link href="/projects" className="block pt-6 pb-10 underline">
-          View all projects →
+        <Link href="/projects" className="block py-10 underline">
+          View {sortedProjects.length - 3} more projects →
         </Link>
       </Content>
-    </>
+      <Footer />
+    </PageLayout>
   );
 }
