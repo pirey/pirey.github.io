@@ -12,7 +12,7 @@ export function TopNavBar() {
 
   const background =
     menuOpen || scrolled
-      ? "bg-bg-light/80 dark:bg-bg-dark backdrop-blur-sm"
+      ? "bg-bg-light/80 dark:bg-bg-dark/80 backdrop-blur-sm"
       : "bg-bg-light dark:bg-bg-dark";
   const shadow = menuOpen || scrolled ? "shadow-sm" : "";
   const headerClass = `${background} ${shadow}`;
