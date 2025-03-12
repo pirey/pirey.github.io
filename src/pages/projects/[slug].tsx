@@ -108,9 +108,7 @@ export default function ProjectPage({ project }: { project: Project }) {
                 alt={img.alt}
                 className="rounded-lg shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
               />
-              <figcaption className="pt-2 text-sm text-gray-600">
-                {img.alt}
-              </figcaption>
+              <figcaption className="pt-2 text-sm">{img.alt}</figcaption>
             </figure>
           ))}
         </div>

@@ -5,8 +5,11 @@ import Giscus from "@giscus/react";
 import "highlight.js/styles/tokyo-night-dark.min.css";
 import Link from "next/link";
 import styles from "./blog.module.css";
+import React from "react";
+import { useTheme } from "@/context/theme";
 
 export function BlogPost({ post }: { post: PostData }) {
+  const { isDark } = useTheme();
   return (
     <>
       <h2 className="text-2xl font-black">{post.metadata.title}</h2>
@@ -33,7 +36,7 @@ export function BlogPost({ post }: { post: PostData }) {
             reactionsEnabled="1"
             emitMetadata="0"
             inputPosition="top"
-            theme="preferred_color_scheme"
+            theme={isDark ? "dark" : "light"}
             lang="en"
             loading="lazy"
           />

@@ -30,7 +30,7 @@ export default function HomePage(props: { allPostData: PostData[] }) {
       <TopNavBar />
       <Content>
         <Heading>Latest Post</Heading>
-        <ul className="flex flex-col gap-y-10 pt-4">
+        <ul className="flex flex-col gap-y-10 pt-10">
           {props.allPostData.slice(0, 3).map((post) => (
             <li role="article" key={post.slug}>
               <BlogPostItem post={post} />
@@ -43,7 +43,7 @@ export default function HomePage(props: { allPostData: PostData[] }) {
         </Link>
 
         <Heading className="pt-10">Latest Projects</Heading>
-        <ul className="flex flex-col gap-y-10 pt-4">
+        <ul className="flex flex-col gap-y-10 pt-10">
           {sortedProjects.slice(0, 3).map((project) => (
             <li role="article" key={project.slug}>
               <ProjectListItem project={project} />

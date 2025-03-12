@@ -12,7 +12,7 @@ import { Footer } from "@/components/footer";
 
 function ContactIcon({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-700/40 text-gray-700">
+    <div className="border-fg-light/40 dark:border-fg-dark/40 flex h-8 w-8 items-center justify-center rounded-md border">
       {children}
     </div>
   );
@@ -30,8 +30,12 @@ export default function AboutPage() {
         <div className="py-10">
           <div className="flex flex-col items-center gap-10 sm:items-start">
             <section id="info">
-              <div className="flex flex-col">
-                <Image src={pp} alt="Me" className="h-32 w-32 rounded-full" />
+              <article className="flex flex-col items-center">
+                <Image
+                  src={pp}
+                  alt="Me"
+                  className="h-40 w-40 rounded-lg shadow-sm"
+                />
                 <ul className="flex gap-2 pt-8">
                   <li>
                     <a
@@ -74,7 +78,7 @@ export default function AboutPage() {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </article>
             </section>
             <section id="content">
               <p>

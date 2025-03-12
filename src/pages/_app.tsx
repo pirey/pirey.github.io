@@ -1,4 +1,5 @@
 import { BASEPATH, PAGE_TITLE } from "@/constants";
+import { ThemeProvider } from "@/context/theme";
 import { geist } from "@/fonts/geist";
 import config from "@/shared/config";
 import "@/styles/globals.css";
@@ -13,9 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>{PAGE_TITLE}</title>
         <link rel="icon" href={`${BASEPATH}/favicon.ico`} />
       </Head>
-      <main className={geist.className}>
-        <Component {...pageProps} />
-      </main>
+      <ThemeProvider>
+        <main className={geist.className}>
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
       {config.gtmId && <GoogleTagManager gtmId={config.gtmId} />}
     </>
   );

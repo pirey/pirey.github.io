@@ -20,7 +20,8 @@
     border-radius: 0.5rem;
   }
   code:not(pre code) {
-    background-color: lightgray;
+    background-color: var(--color-accent);
+    color: white;
     display: inline-block;
     padding-left: calc(var(--spacing) * 2);
     padding-right: calc(var(--spacing) * 2);
@@ -59,4 +60,11 @@
     font-weight: bold;
     font-size: 0.875rem;
   } /* 14px */
+}
+:global(.dark) {
+  .post-content {
+    code:not(pre code) {
+      color: var(--color-fg-dark);
+    }
+  }
 }

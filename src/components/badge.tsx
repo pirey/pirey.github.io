@@ -1,6 +1,6 @@
 export function LabelBadge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block rounded-full bg-gray-500 px-3 text-sm text-white">
+    <span className="bg-accent dark:bg-accent-dark inline-block rounded-full px-3 text-sm text-white">
       {children}
     </span>
   );
