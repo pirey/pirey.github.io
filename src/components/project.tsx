@@ -8,7 +8,7 @@ export function ProjectListItem({ project }: { project: Project }) {
     <Link
       aria-label={project.title}
       href={`/projects/${project.slug}`}
-      className="group flex justify-between gap-x-10"
+      className="group flex flex-col justify-between gap-x-10 sm:flex-row"
     >
       <div>
         <h3 className="font-bold">{project.title}</h3>
@@ -16,7 +16,7 @@ export function ProjectListItem({ project }: { project: Project }) {
           <span className="italic">{project.role}</span> — {project.year}
         </h4>
         <p>{project.description}</p>
-        <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2 grayscale group-hover:grayscale-0">
+        <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
           {project.tags.map((tag) => (
             <TechBadge key={tag} tech={tag} />
           ))}

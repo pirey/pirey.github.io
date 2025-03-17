@@ -26,9 +26,17 @@ import {
   TailwindCSS,
   TypeScript,
 } from "@/components/icons";
-export function LabelBadge({ children }: { children: React.ReactNode }) {
+export function LabelBadge({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <span className="border-accent/20 dark:border-accent inline-flex items-center justify-between gap-x-2 rounded-full border px-3 text-sm">
+    <span
+      className={`border-accent/20 dark:border-accent inline-flex items-center justify-between gap-x-2 rounded-full border px-3 text-sm ${className}`}
+    >
       {children}
     </span>
   );
