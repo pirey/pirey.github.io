@@ -66,7 +66,7 @@ const projects: Project[] = [
     title: "Viapulsa Customer Chat Panel",
     description:
       "Chat panel for Viapulsa agents to handle customer realtime chats",
-    tags: ["ReactJS", "Material UI"],
+    tags: ["ReactJS", "MaterialUI"],
     role: "Frontend Developer",
     roleDescription:
       "The chat panel allowed Viapulsa agents to manage and respond to customer inquiries efficiently, streamlining communication and support.",
@@ -149,7 +149,7 @@ const projects: Project[] = [
     title: "MitraGamers Client Website",
     description:
       "Platform which enable clients to sell various game topup service.",
-    tags: ["NextJS", "TailwindCSS"],
+    tags: ["ReactJS", "NextJS", "TailwindCSS"],
     role: "Frontend Developer",
     roleDescription: "Build a customizable website for MitraGamers clients.",
     images: [
@@ -205,7 +205,7 @@ const projects: Project[] = [
   {
     title: "Maviapulsa",
     description: "Platform to convert phone credit (pulsa) into cash.",
-    tags: ["NextJS", "TailwindCSS"],
+    tags: ["ReactJS", "NextJS", "TailwindCSS"],
     role: "Fullstack Developer",
     roleDescription:
       "Responsible for translating UI mockup into fully functioning web pages along with the backend task to provide the data.",
@@ -291,7 +291,7 @@ const projects: Project[] = [
   {
     title: "Jejualan Statistic Dashboard",
     role: "Fullstack Developer",
-    tags: ["Ruby", "dashing.io", "CoffeeScript"],
+    tags: ["Ruby", "CoffeeScript"],
     description:
       "Internal dashboard for monitoring Jejualan's statistics. The data is provided by Jejualan database.",
     images: [
@@ -362,7 +362,7 @@ const projects: Project[] = [
   {
     title: "Jejualan Facebook Market",
     role: "Fullstack Developer",
-    tags: ["Facebook App", "PHP", "MySQL"],
+    tags: ["PHP", "MySQL"],
     description:
       "A custom facebook app built specifically for Jejualan e-commerce platform that lets the merchant to sell their products from Jejualan in facebook page.",
     images: [
@@ -379,7 +379,7 @@ const projects: Project[] = [
   {
     title: "Jejualan App",
     role: "Fullstack Developer",
-    tags: ["Ionic Framework", "JavaScript", "AngularJS", "Android", "iOS"],
+    tags: ["Ionic Framework", "JavaScript", "AngularJS"],
     description: "Mobile app for Jejualan platform.",
     images: [
       {
@@ -400,7 +400,7 @@ const projects: Project[] = [
   {
     title: "Ongkirku App",
     role: "Fullstack Developer",
-    tags: ["Ionic Framework", "JavaScript", "AngularJS", "Android", "iOS"],
+    tags: ["Ionic Framework", "JavaScript", "AngularJS"],
     description: "Mobile app for tracking shipping cost for various vendors.",
     images: [
       {
@@ -459,7 +459,7 @@ const projects: Project[] = [
   {
     title: "Uruglasses",
     role: "Fullstack Developer",
-    tags: ["JavaScript", "ReactJS", "Instagram API", "Firebase"],
+    tags: ["JavaScript", "ReactJS", "Firebase"],
     description: "An online shop to sell products from instagram posts.",
     images: [
       {
@@ -475,7 +475,7 @@ const projects: Project[] = [
   {
     title: "SingaporeJobsParttimeSG",
     role: "Fullstack Developer",
-    tags: ["Python", "Telegram Bot API", "ReactJS", "PostgreSQL"],
+    tags: ["Python", "ReactJS", "PostgreSQL", "Telegram Bot API"],
     description:
       "Platform for employers to submit job openings which can be monitored by job seekers via a Telegram channel.",
     links: [

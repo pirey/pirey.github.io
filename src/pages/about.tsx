@@ -6,7 +6,7 @@ import Image from "next/image";
 import pp from "@/assets/pp.jpg";
 import { Envelope, Github, LinkedIn, Twitter } from "@/components/icons";
 import { Heading } from "@/components/heading";
-import { LabelBadge, LabelBadgeList } from "@/components/badge";
+import { BadgeList, TechBadge } from "@/components/badge";
 import { PageLayout } from "@/components/layout";
 import { Footer } from "@/components/footer";
 
@@ -92,28 +92,39 @@ export default function AboutPage() {
                 <div className="pt-4">
                   <p>I am comfortable to work on projects using:</p>
 
-                  <LabelBadgeList>
-                    <LabelBadge>JavaScript / TypeScript / NextJS</LabelBadge>
-                    <LabelBadge>Python / Flask</LabelBadge>
-                    <LabelBadge>PHP / Laravel</LabelBadge>
-                    <LabelBadge>SQL</LabelBadge>
-                    <LabelBadge>React</LabelBadge>
-                    <LabelBadge>TailwindCSS</LabelBadge>
-                  </LabelBadgeList>
+                  <BadgeList>
+                    <TechBadge tech="JavaScript" />
+                    <TechBadge tech="TypeScript" />
+                    <TechBadge tech="NodeJS" />
+                    <TechBadge tech="Express" />
+                    <TechBadge tech="NextJS" />
+                    <TechBadge tech="ReactJS" />
+                    <TechBadge tech="Python" />
+                    <TechBadge tech="Flask" />
+                    <TechBadge tech="PHP" />
+                    <TechBadge tech="Laravel" />
+                    <TechBadge tech="PostgreSQL" />
+                    <TechBadge tech="MySQL" />
+                    <TechBadge tech="TailwindCSS" />
+                  </BadgeList>
                 </div>
 
                 <div className="pt-4">
                   <p>I have previously work using the following tech:</p>
 
-                  <LabelBadgeList>
-                    <LabelBadge>Go</LabelBadge>
-                    <LabelBadge>Ruby</LabelBadge>
-                    <LabelBadge>React Native</LabelBadge>
-                    <LabelBadge>AngularJS</LabelBadge>
-                    <LabelBadge>Ionic Framework</LabelBadge>
-                    <LabelBadge>ElasticSearch</LabelBadge>
-                    <LabelBadge>Redis</LabelBadge>
-                  </LabelBadgeList>
+                  <BadgeList>
+                    <TechBadge tech="Go" />
+                    <TechBadge tech="Ruby" />
+                    <TechBadge tech="React Native" />
+                    <TechBadge tech="AngularJS" />
+                    <TechBadge tech="Ionic Framework" />
+                    <TechBadge tech="ElasticSearch" />
+                    <TechBadge tech="Redis" />
+                    <TechBadge tech="MaterialUI" />
+                    <TechBadge tech="Bootstrap" />
+                    <TechBadge tech="socket.io" />
+                    <TechBadge tech="CodeIgniter" />
+                  </BadgeList>
                 </div>
               </article>
 

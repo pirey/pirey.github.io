@@ -1,4 +1,4 @@
-import { LabelBadge } from "@/components/badge";
+import { TechBadge } from "@/components/badge";
 import { Project } from "@/shared/projects";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,9 +16,9 @@ export function ProjectListItem({ project }: { project: Project }) {
           <span className="italic">{project.role}</span> — {project.year}
         </h4>
         <p>{project.description}</p>
-        <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2">
+        <div className="flex flex-wrap gap-x-2 gap-y-1 pt-2 grayscale group-hover:grayscale-0">
           {project.tags.map((tag) => (
-            <LabelBadge key={tag}>{tag}</LabelBadge>
+            <TechBadge key={tag} tech={tag} />
           ))}
         </div>
       </div>
@@ -26,7 +26,7 @@ export function ProjectListItem({ project }: { project: Project }) {
       <Image
         src={project.images[0].src}
         alt={project.title}
-        className="transition-grayscale hidden h-24 w-32 rounded-sm object-cover object-top shadow-sm grayscale duration-200 group-hover:grayscale-0 sm:inline-flex"
+        className="transition-grayscale hidden h-24 w-32 rounded-sm object-cover object-top shadow-sm grayscale duration-200 group-hover:z-50 group-hover:scale-200 group-hover:shadow-2xl group-hover:grayscale-0 sm:inline-flex"
       />
     </Link>
   );

@@ -1,4 +1,4 @@
-import { LabelBadge, LabelBadgeList } from "@/components/badge";
+import { LabelBadge, BadgeList } from "@/components/badge";
 import { Content } from "@/components/content";
 import { Footer } from "@/components/footer";
 import { PageLayout } from "@/components/layout";
@@ -68,11 +68,11 @@ export default function ProjectPage({ project }: { project: Project }) {
           ← All projects
         </Link>
         <p className="pt-10">{project.description}</p>
-        <LabelBadgeList>
+        <BadgeList>
           {project.tags.map((tag) => (
             <LabelBadge key={tag}>{tag}</LabelBadge>
           ))}
-        </LabelBadgeList>
+        </BadgeList>
         {project.links && (
           <div className="flex gap-x-2 gap-y-1 pt-2">
             <span>Links:</span>
