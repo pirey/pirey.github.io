@@ -115,6 +115,7 @@ const projects: Project[] = [
       name: "Viapulsa",
       url: "https://viapulsa.co.id",
       logo: viapulsaLogo,
+      logoBg: "white",
     },
   },
   {
@@ -156,6 +157,7 @@ const projects: Project[] = [
       name: "PT. Sinergi Inti Teknovasi",
       url: "https://sintitek.co.id",
       logo: sintitekLogo,
+      logoBg: "white",
     },
   },
   {
