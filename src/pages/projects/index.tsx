@@ -12,11 +12,11 @@ export default function ProjectsPage() {
   return (
     <PageLayout>
       <Head>
-        <title>{`Some of my works | ${PAGE_TITLE}`}</title>
+        <title>{`Works | ${PAGE_TITLE}`}</title>
       </Head>
       <TopNavBar />
       <Content>
-        <Heading>Some of my works</Heading>
+        <Heading>Works</Heading>
         <ul className="flex flex-col gap-y-10 py-10">
           {sortedProjects.map((project) => {
             return (
