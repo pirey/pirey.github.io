@@ -130,13 +130,13 @@ function DarkModeToggle({ className }: { className?: string }) {
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <span
+    <div
       role="button"
       aria-label="Toggle Dark Mode"
       onClick={toggleTheme}
-      className={`cursor-pointer ${className}`}
+      className={`hover:bg-bg-dark dark:hover:bg-bg-light hover:text-fg-dark dark:hover:text-fg-light relative -mt-2 cursor-pointer rounded-full p-2 ${className}`}
     >
       {isDark ? <Sun /> : <Moon />}
-    </span>
+    </div>
   );
 }
