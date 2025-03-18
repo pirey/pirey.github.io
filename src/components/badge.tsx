@@ -60,9 +60,9 @@ export function TechIcon({ tech }: { tech: string }) {
     case "javascript":
       return <JavaScript />;
     case "socket.io":
-      return <SocketIO />;
+      return <SocketIO className="dark:stroke-fg-dark" />;
     case "express":
-      return <Express />;
+      return <Express className="dark:fill-fg-dark" />;
     case "nodejs":
       return <NodeJSIcon />;
     case "typescript":
