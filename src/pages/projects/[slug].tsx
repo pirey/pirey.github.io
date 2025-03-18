@@ -1,10 +1,10 @@
-import { LabelBadge, BadgeList } from "@/components/badge";
+import { BadgeList, TechBadge } from "@/components/badge";
 import { Content } from "@/components/content";
 import { Footer } from "@/components/footer";
 import { PageLayout } from "@/components/layout";
 import { TopNavBar } from "@/components/navbar";
 import { PAGE_TITLE } from "@/constants";
-import { Project, sortedProjects } from "@/shared/projects";
+import { Project, ProjectClient, sortedProjects } from "@/shared/projects";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -51,49 +51,37 @@ export default function ProjectPage({ project }: { project: Project }) {
       <Content>
         <h2 className="text-2xl font-black">{project.title}</h2>
         <h4 className="text-sm">{project.year}</h4>
-        {project.client &&
-          (project.client.url ? (
-            <a
-              href={project.client.url}
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h4>{project.client.name}</h4>
-            </a>
-          ) : (
-            <h4>{project.client.name}</h4>
-          ))}
-        <Link href="/projects" className="block pt-4 underline">
-          ← All projects
-        </Link>
-        <p className="pt-10">{project.description}</p>
-        <BadgeList>
-          {project.tags.map((tag) => (
-            <LabelBadge key={tag}>{tag}</LabelBadge>
-          ))}
-        </BadgeList>
-        {project.links && (
-          <div className="flex gap-x-2 gap-y-1 pt-2">
-            <span>Links:</span>
-            {project.links.map((link, i) => (
-              <a
-                key={link.url}
-                href={link.url}
-                className="underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-                {i < Number(project.links?.length) - 1 ? ", " : ""}
-              </a>
+        <ProjectClientDisplay client={project.client} />
+
+        <article className="pt-4">
+          <p className="pt-4">{project.description}</p>
+          <BadgeList>
+            {project.tags.map((tag) => (
+              <TechBadge key={tag} tech={tag} />
             ))}
-          </div>
-        )}
+          </BadgeList>
+          {project.links && (
+            <div className="flex gap-x-2 gap-y-1 pt-2">
+              <span>Links:</span>
+              {project.links.map((link, i) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                  {i < Number(project.links?.length) - 1 ? ", " : ""}
+                </a>
+              ))}
+            </div>
+          )}
+        </article>
 
         <article className="pt-10">
-          <h3 className="text-xl font-bold">Role</h3>
-          <p>
+          <h3 className="text-xl font-bold">Description</h3>
+          <p className="pt-4">
             <span className="italic">{project.role}</span> —{" "}
             {project.roleDescription}
           </p>
@@ -112,8 +100,36 @@ export default function ProjectPage({ project }: { project: Project }) {
             </figure>
           ))}
         </div>
+        <Link href="/projects" className="block pb-10 underline">
+          ← View all projects
+        </Link>
       </Content>
       <Footer />
     </PageLayout>
+  );
+}
+
+function ProjectClientDisplay({ client }: { client?: ProjectClient }) {
+  if (!client) return null;
+  if (!client.logo) {
+    return <h4>{client.name}</h4>;
+  }
+  const bgClass =
+    client.logoBg === "black"
+      ? "bg-black p-2 rounded-sm"
+      : client.logoBg === "white"
+        ? "dark:bg-white dark:p-2 dark:rounded-sm"
+        : "";
+  return (
+    client.logo && (
+      <a href={client.url ?? "#"} className="inline-block pt-2">
+        <Image
+          src={client.logo}
+          alt={client.name}
+          height={32}
+          className={bgClass}
+        />
+      </a>
+    )
   );
 }

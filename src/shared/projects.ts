@@ -37,11 +37,22 @@ import vpChatPage from "@/assets/projects/viapulsa-chat/vp-chat-page.webp";
 import vpChatFilter from "@/assets/projects/viapulsa-chat/vp-chat-filter.webp";
 import vpChatShortcuts from "@/assets/projects/viapulsa-chat/vp-chat-shortcuts.webp";
 import vpChatLogin from "@/assets/projects/viapulsa-chat/vp-chat-login.webp";
+
+import viapulsaLogo from "@/assets/project-clients/viapulsa.png";
+import maviapulsaLogo from "@/assets/project-clients/maviapulsa.png";
+import mitragamersLogo from "@/assets/project-clients/mitragamers.png";
+import sintitekLogo from "@/assets/project-clients/sintitek.png";
+import whatshalalLogo from "@/assets/project-clients/whatshalal.png";
+import idwebhostLogo from "@/assets/project-clients/idwebhost.svg";
+import jejualanLogo from "@/assets/project-clients/jejualan.png";
+
 import { StaticImageData } from "next/image";
 
 export type ProjectClient = {
   name: string;
   url?: string;
+  logo?: StaticImageData;
+  logoBg?: "black" | "white";
 };
 
 export type Project = {
@@ -69,7 +80,7 @@ const projects: Project[] = [
     tags: ["ReactJS", "MaterialUI"],
     role: "Frontend Developer",
     roleDescription:
-      "The chat panel allowed Viapulsa agents to manage and respond to customer inquiries efficiently, streamlining communication and support.",
+      "Build the chat panel to allowed Viapulsa agents to manage and respond to customer inquiries efficiently, streamlining communication and support.",
     images: [
       {
         orientation: "landscape",
@@ -103,6 +114,7 @@ const projects: Project[] = [
     client: {
       name: "Viapulsa",
       url: "https://viapulsa.co.id",
+      logo: viapulsaLogo,
     },
   },
   {
@@ -143,6 +155,7 @@ const projects: Project[] = [
     client: {
       name: "PT. Sinergi Inti Teknovasi",
       url: "https://sintitek.co.id",
+      logo: sintitekLogo,
     },
   },
   {
@@ -193,13 +206,15 @@ const projects: Project[] = [
     year: "2025",
     links: [
       {
-        label: "mitragamers",
+        label: "mitragamers demo",
         url: "https://demo.mitragamers.com",
       },
     ],
     client: {
       name: "Mitragamers",
       url: "https://mitragamers.com",
+      logo: mitragamersLogo,
+      logoBg: "black",
     },
   },
   {
@@ -227,6 +242,8 @@ const projects: Project[] = [
     client: {
       name: "Maviapulsa",
       url: "https://maviapulsa.com",
+      logo: maviapulsaLogo,
+      logoBg: "black",
     },
   },
   {
@@ -287,6 +304,12 @@ const projects: Project[] = [
       "I built chat dashboard for agents to handle incoming chats from end users using NodeJS—Express with socket.io for duplex communication, Elasticsearch for fast message searching, and MySQL as persistent storage. I also built the embeddable chat widget using AngularJS.",
     slug: "chatonomy",
     year: "2017",
+    client: {
+      name: "IDwebhost",
+      logo: idwebhostLogo,
+      url: "https://idwebhost.com",
+      logoBg: "white",
+    },
   },
   {
     title: "Jejualan Statistic Dashboard",
@@ -304,6 +327,11 @@ const projects: Project[] = [
     roleDescription: "",
     slug: "jejualan-dashing",
     year: "2017",
+    client: {
+      name: "Jejualan",
+      logo: jejualanLogo,
+      url: "https://jejualan.com",
+    },
   },
   {
     title: "Distributor POS",
@@ -375,6 +403,11 @@ const projects: Project[] = [
     roleDescription: "",
     slug: "jejualan-fb-market",
     year: "2016",
+    client: {
+      name: "Jejualan",
+      logo: jejualanLogo,
+      url: "https://jejualan.com",
+    },
   },
   {
     title: "Jejualan App",
@@ -396,6 +429,11 @@ const projects: Project[] = [
     roleDescription: "",
     slug: "jejualan-app",
     year: "2016",
+    client: {
+      name: "Jejualan",
+      logo: jejualanLogo,
+      url: "https://jejualan.com",
+    },
   },
   {
     title: "Ongkirku App",
@@ -439,6 +477,10 @@ const projects: Project[] = [
     roleDescription: "",
     slug: "wh-token",
     year: "2019",
+    client: {
+      name: "WhatsHalal",
+      logo: whatshalalLogo,
+    },
   },
   {
     title: "WhatsHalal Food Delivery Service",
@@ -455,6 +497,10 @@ const projects: Project[] = [
     roleDescription: "",
     slug: "wh-food-delivery",
     year: "2018",
+    client: {
+      name: "WhatsHalal",
+      logo: whatshalalLogo,
+    },
   },
   {
     title: "Uruglasses",

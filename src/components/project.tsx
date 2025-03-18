@@ -8,7 +8,7 @@ export function ProjectListItem({ project }: { project: Project }) {
     <Link
       aria-label={project.title}
       href={`/projects/${project.slug}`}
-      className="group flex flex-col justify-between gap-x-10 sm:flex-row"
+      className="group flex flex-col justify-between gap-10 sm:flex-row"
     >
       <div>
         <h3 className="font-bold">{project.title}</h3>
@@ -26,7 +26,7 @@ export function ProjectListItem({ project }: { project: Project }) {
       <Image
         src={project.images[0].src}
         alt={project.title}
-        className="transition-grayscale hidden h-24 w-32 rounded-sm object-cover object-top shadow-sm grayscale duration-200 group-hover:z-50 group-hover:scale-200 group-hover:shadow-2xl group-hover:grayscale-0 sm:inline-flex"
+        className="sm:transition-grayscale flex-none rounded-sm object-cover object-top shadow-sm duration-200 group-hover:z-50 group-hover:shadow-2xl sm:h-24 sm:w-32 sm:grayscale sm:group-hover:scale-200 sm:group-hover:grayscale-0"
       />
     </Link>
   );
