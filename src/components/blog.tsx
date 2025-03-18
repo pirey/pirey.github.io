@@ -14,15 +14,12 @@ export function BlogPost({ post }: { post: PostData }) {
     <>
       <h2 className="text-2xl font-black">{post.metadata.title}</h2>
       <p className="text-sm">{formatDate(new Date(post.metadata.date))}</p>
-      <Link href="/blog" className="block pt-4 underline">
-        ← All posts
-      </Link>
       <article
         className={styles["post-content"]}
         dangerouslySetInnerHTML={{ __html: post.contentHtml || "" }}
       ></article>
       <Link href="/blog" className="underline">
-        ← All posts
+        ← View all posts
       </Link>
       <div className="py-10">
         {config.giscusRepo && config.giscusRepoId && (
