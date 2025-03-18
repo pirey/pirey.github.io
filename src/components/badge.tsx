@@ -1,5 +1,6 @@
 import {
   AngularJS,
+  AntDesign,
   Bootstrap,
   CodeIgniter,
   CoffeeScript,
@@ -101,6 +102,8 @@ export function TechIcon({ tech }: { tech: string }) {
       return <CoffeeScript />;
     case "bootstrap":
       return <Bootstrap />;
+    case "antdesign":
+      return <AntDesign />;
     default:
       return null;
   }

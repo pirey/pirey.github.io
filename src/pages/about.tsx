@@ -122,6 +122,7 @@ export default function AboutPage() {
                     <TechBadge tech="Redis" />
                     <TechBadge tech="MaterialUI" />
                     <TechBadge tech="Bootstrap" />
+                    <TechBadge tech="AntDesign" />
                     <TechBadge tech="socket.io" />
                     <TechBadge tech="CodeIgniter" />
                   </BadgeList>
