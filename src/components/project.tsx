@@ -26,7 +26,7 @@ export function ProjectListItem({ project }: { project: Project }) {
       <Image
         src={project.images[0].src}
         alt={project.title}
-        className="sm:transition-grayscale flex-none rounded-sm object-cover object-top shadow-sm duration-200 group-hover:z-50 group-hover:shadow-2xl sm:h-24 sm:w-32 sm:grayscale sm:group-hover:scale-200 sm:group-hover:grayscale-0"
+        className="sm:transition-grayscale flex-none rounded-sm object-cover object-top shadow-sm duration-200 group-hover:z-10 group-hover:shadow-2xl sm:h-24 sm:w-32 sm:grayscale sm:group-hover:scale-200 sm:group-hover:grayscale-0"
       />
     </Link>
   );

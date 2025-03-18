@@ -72,7 +72,7 @@ function Menu() {
         <Link href="/blog">Blog</Link>
       </li>
       <li>
-        <Link href="/projects">Projects</Link>
+        <Link href="/projects">Works</Link>
       </li>
       <li>
         <Link href="/about">About</Link>
@@ -117,7 +117,7 @@ function MobileDropdownMenu() {
         <Link href="/blog">Blog</Link>
       </li>
       <li>
-        <Link href="/projects">Projects</Link>
+        <Link href="/projects">Works</Link>
       </li>
       <li>
         <Link href="/about">About</Link>

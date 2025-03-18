@@ -42,7 +42,7 @@ export default function HomePage(props: { allPostData: PostData[] }) {
           View {props.allPostData.length - 3} more posts →
         </Link>
 
-        <Heading className="pt-10">Latest Projects</Heading>
+        <Heading className="pt-10">Latest Works</Heading>
         <ul className="flex flex-col gap-y-10 pt-10">
           {sortedProjects.slice(0, 3).map((project) => (
             <li role="article" key={project.slug}>
