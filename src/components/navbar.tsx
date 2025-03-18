@@ -134,9 +134,12 @@ function DarkModeToggle({ className }: { className?: string }) {
       role="button"
       aria-label="Toggle Dark Mode"
       onClick={toggleTheme}
-      className={`hover:bg-bg-dark dark:hover:bg-bg-light hover:text-fg-dark dark:hover:text-fg-light relative -mt-2 cursor-pointer rounded-full p-2 ${className}`}
+      className={`group relative size-6 cursor-pointer ${className}`}
     >
-      {isDark ? <Sun /> : <Moon />}
+      <div className="group-hover:text-fg-dark dark:group-hover:text-fg-light absolute inset-0 z-20">
+        {isDark ? <Sun /> : <Moon />}
+      </div>
+      <div className="transition-scale group-hover:bg-bg-dark dark:group-hover:bg-bg-light absolute inset-0 scale-150 rounded-full duration-200 group-hover:scale-200"></div>
     </div>
   );
 }
