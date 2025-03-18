@@ -110,7 +110,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="pt-4">
-                  <p>I have previously work using the following tech:</p>
+                  <p>I have previously work using:</p>
 
                   <BadgeList>
                     <TechBadge tech="Go" />
@@ -131,9 +131,7 @@ export default function AboutPage() {
               <article className="pt-10">
                 <h3 className="font-bold">Work</h3>
 
-                <p className="pt-4">
-                  I have worked professionally at the following companies:
-                </p>
+                <p className="pt-4">I have worked professionally at:</p>
 
                 <ul className="list-inside list-disc pt-4">
                   <li>2014-2018 IDwebhost</li>
