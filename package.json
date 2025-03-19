@@ -10,6 +10,7 @@
     "predev": "npm run copyassets",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "copyassets": "node ./src/bin/copy-assets.mjs"
   },
   "dependencies": {
@@ -28,12 +29,11 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
+    "eslint-plugin-readable-tailwind": "^2.0.0",
     "fs-extra": "^11.3.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "postcss": "^8.5.3",
-    "prettier": "^3.5.2",
-    "prettier-plugin-tailwindcss": "^0.6.11",
     "rehype-highlight": "^7.0.2",
     "rehype-stringify": "^10.0.1",
     "remark-parse": "^11.0.0",

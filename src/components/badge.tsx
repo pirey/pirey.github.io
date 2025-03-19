@@ -36,7 +36,12 @@ export function LabelBadge({
 }) {
   return (
     <span
-      className={`border-accent/20 dark:border-accent inline-flex items-center justify-between gap-x-2 rounded-full border px-3 text-sm ${className}`}
+      className={`
+        border-accent/20 inline-flex items-center justify-between gap-x-2
+        rounded-full border px-3 text-sm
+        dark:border-accent
+        ${className}
+      `}
     >
       {children}
     </span>

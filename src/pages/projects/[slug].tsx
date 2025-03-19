@@ -87,14 +87,20 @@ export default function ProjectPage({ project }: { project: Project }) {
           </p>
         </article>
 
-        <div className="flex flex-wrap justify-center gap-10 py-10 sm:justify-start">
+        <div className={`
+          flex flex-wrap justify-center gap-10 py-10
+          sm:justify-start
+        `}>
           {project.images.map((img) => (
             <figure key={img.alt} className="text-center">
               <Image
                 priority
                 src={img.src}
                 alt={img.alt}
-                className="rounded-lg shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
+                className={`
+                  rounded-lg shadow-sm transition-transform
+                  hover:-translate-y-1 hover:shadow-lg
+                `}
               />
               <figcaption className="pt-2 text-sm">{img.alt}</figcaption>
             </figure>

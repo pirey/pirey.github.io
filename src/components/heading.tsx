@@ -6,7 +6,11 @@ export function Heading({
   className?: string;
 }) {
   return (
-    <h2 className={`text-center text-2xl font-black sm:text-left ${className}`}>
+    <h2 className={`
+      text-center text-2xl font-black
+      sm:text-left
+      ${className}
+    `}>
       {children}
     </h2>
   );
