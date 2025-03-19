@@ -32,7 +32,7 @@ export default function HomePage(props: { allPostData: PostData[] }) {
         <Heading>Latest Post</Heading>
         <ul className="flex flex-col gap-y-10 pt-10">
           {props.allPostData.slice(0, 3).map((post) => (
-            <li role="article" key={post.slug}>
+            <li key={post.slug}>
               <BlogPostItem post={post} />
             </li>
           ))}
@@ -45,7 +45,7 @@ export default function HomePage(props: { allPostData: PostData[] }) {
         <Heading className="pt-10">Latest Works</Heading>
         <ul className="flex flex-col gap-y-10 pt-10">
           {sortedProjects.slice(0, 3).map((project) => (
-            <li role="article" key={project.slug}>
+            <li key={project.slug}>
               <ProjectListItem project={project} />
             </li>
           ))}

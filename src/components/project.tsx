@@ -6,6 +6,7 @@ import Link from "next/link";
 export function ProjectListItem({ project }: { project: Project }) {
   return (
     <Link
+      role="article"
       aria-label={project.title}
       href={`/projects/${project.slug}`}
       className={`

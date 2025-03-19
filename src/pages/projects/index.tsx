@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         <ul className="flex flex-col gap-y-10 py-10">
           {sortedProjects.map((project) => {
             return (
-              <li role="article" key={project.title}>
+              <li key={project.title}>
                 <ProjectListItem project={project} />
               </li>
             );

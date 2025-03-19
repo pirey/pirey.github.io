@@ -31,7 +31,7 @@ export default function BlogPage(props: { allPostData: ContentlessPost[] }) {
         <Heading>Blog</Heading>
         <ul className="flex flex-col gap-y-10 py-10">
           {props.allPostData.map((post) => (
-            <li role="article" key={post.slug}>
+            <li key={post.slug}>
               <BlogPostItem post={post} />
             </li>
           ))}
