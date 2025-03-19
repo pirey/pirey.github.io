@@ -8,7 +8,7 @@ export function ProjectListItem({ project }: { project: Project }) {
     <Link
       aria-label={project.title}
       href={`/projects/${project.slug}`}
-      className="group flex flex-col justify-between gap-10 sm:flex-row"
+      className="group relative flex flex-col justify-between gap-10 sm:flex-row"
     >
       <div>
         <h3 className="font-bold">{project.title}</h3>
@@ -23,10 +23,11 @@ export function ProjectListItem({ project }: { project: Project }) {
         </div>
       </div>
 
+      <div className="hidden h-24 w-32 flex-none sm:group-hover:block"></div>
       <Image
         src={project.images[0].src}
         alt={project.title}
-        className="sm:transition-grayscale max-h-56 flex-none rounded-sm object-cover object-top shadow-sm duration-200 group-hover:z-10 group-hover:shadow-2xl sm:h-24 sm:max-h-auto sm:w-32 sm:grayscale sm:group-hover:scale-200 sm:group-hover:grayscale-0"
+        className="sm:transition-grayscale max-h-56 flex-none rounded-sm object-cover object-top shadow-sm duration-200 group-hover:z-10 group-hover:shadow-2xl sm:h-24 sm:max-h-screen sm:w-32 sm:grayscale sm:group-hover:absolute sm:group-hover:top-0 sm:group-hover:right-0 sm:group-hover:h-auto sm:group-hover:scale-200 sm:group-hover:grayscale-0"
       />
     </Link>
   );
