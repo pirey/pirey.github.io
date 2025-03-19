@@ -87,10 +87,12 @@ export default function ProjectPage({ project }: { project: Project }) {
           </p>
         </article>
 
-        <div className={`
-          flex flex-wrap justify-center gap-10 py-10
-          sm:justify-start
-        `}>
+        <div
+          className={`
+            flex flex-wrap justify-center gap-10 py-10
+            sm:justify-start
+          `}
+        >
           {project.images.map((img) => (
             <figure key={img.alt} className="text-center">
               <Image
@@ -122,9 +124,9 @@ function ProjectClientDisplay({ client }: { client?: ProjectClient }) {
   }
   const bgClass =
     client.logoBg === "black"
-      ? "bg-black p-2 rounded-sm"
+      ? "bg-bg-dark p-1 rounded-sm"
       : client.logoBg === "white"
-        ? "dark:bg-white dark:p-2 dark:rounded-sm"
+        ? "dark:bg-bg-light dark:p-1 dark:rounded-sm"
         : "";
   return (
     client.logo && (
