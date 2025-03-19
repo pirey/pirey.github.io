@@ -38,7 +38,7 @@ export function ProjectListItem({ project }: { project: Project }) {
         className={`
           sm:transition-grayscale sm:h-24 sm:w-32 sm:grayscale
           sm:group-hover:absolute sm:group-hover:top-0 sm:group-hover:right-0
-          sm:group-hover:h-auto sm:group-hover:max-h-36 sm:group-hover:scale-200
+          sm:group-hover:h-auto sm:group-hover:max-h-48 sm:group-hover:scale-200
           sm:group-hover:grayscale-0
           max-h-56 flex-none rounded-sm object-cover object-top shadow-sm
           duration-200
