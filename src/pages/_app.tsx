@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>{PAGE_TITLE}</title>
+        <meta name="description" content="My personal website, blog, works." />
         <link rel="icon" href={`${BASEPATH}/favicon.ico`} />
       </Head>
       <ThemeProvider>
