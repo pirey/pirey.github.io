@@ -2,6 +2,8 @@
 title: Customizing Coc Explorer
 date: 2020-09-23T08:31:13
 description: "Here is how I customize coc-explorer, an alternative to nerdtree"
+tags:
+  - vim
 ---
 
 [Coc explorer](https://github.com/weirongxu/coc-explorer) is a [coc.nvim](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions) extension that tries to mimic the file explorer feature of vscode.
@@ -48,7 +50,6 @@ I'd like to display some nice font icon, I'm using both nerdfont and devicons.
 ```
 
 ![with icon](./with-icon.png)
-
 
 By default, coc explorer render ridiculous amount of whitespace after filename, of course I'm getting rid of that.
 

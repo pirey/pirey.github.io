@@ -2,6 +2,9 @@
 title: GitHub pages domain takeover
 date: 2025-03-02T10:31:45
 description: Some shady website was deployed under my domain using GitHub pages.
+tags:
+  - github
+  - security
 ---
 
 Earlier this morning, someone out of nowhere deployed some ridiculously shady website under my domain name.

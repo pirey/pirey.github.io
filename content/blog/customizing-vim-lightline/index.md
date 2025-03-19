@@ -2,6 +2,8 @@
 title: Customizing Vim Lightline
 date: 2020-09-09T00:03:22
 description: "Here's a summary of how I customize vim lightline plugin to match my needs."
+tags:
+  - vim
 ---
 
 Here's a summary of how I customize vim lightline plugin to match my needs.
@@ -9,7 +11,6 @@ Here's a summary of how I customize vim lightline plugin to match my needs.
 The idea is to have statusline that is nice, simple, and still useful.
 
 So I come up with this setup.
-
 
 ## Full window, full feature
 

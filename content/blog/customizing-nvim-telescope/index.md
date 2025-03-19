@@ -1,7 +1,9 @@
 ---
 title: Customizing telescope.nvim
 date: 2023-07-30T15:20:15
-description: 'How I customize telescope.nvim plugin'
+description: "How I customize telescope.nvim plugin"
+tags:
+  - neovim
 ---
 
 ## Prerequisites

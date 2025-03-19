@@ -7,6 +7,7 @@ import Link from "next/link";
 import styles from "./blog.module.css";
 import React from "react";
 import { useTheme } from "@/context/theme";
+import { BadgeList, LabelBadge } from "@/components/badge";
 
 export function BlogPost({ post }: { post: PostData }) {
   const { isDark } = useTheme();
@@ -14,6 +15,13 @@ export function BlogPost({ post }: { post: PostData }) {
     <>
       <h2 className="text-2xl font-black">{post.metadata.title}</h2>
       <p className="text-sm">{formatDate(new Date(post.metadata.date))}</p>
+      {post.metadata.tags && (
+        <BadgeList>
+          {post.metadata.tags.map((tag) => (
+            <LabelBadge key={tag}>{tag}</LabelBadge>
+          ))}
+        </BadgeList>
+      )}
       <article
         className={styles["post-content"]}
         dangerouslySetInnerHTML={{ __html: post.contentHtml || "" }}
@@ -44,12 +52,20 @@ export function BlogPost({ post }: { post: PostData }) {
 }
 
 export function BlogPostItem({ post }: { post: PostData }) {
+  console.log(post);
   return (
     <article>
       <Link aria-label={post.metadata.title} href={`/blog/${post.slug}`}>
         <h3 className="font-bold">{post.metadata.title}</h3>
         <h4 className="text-sm">{formatDate(new Date(post.metadata.date))}</h4>
         <p>{post.metadata.description}</p>
+        {post.metadata.tags && (
+          <BadgeList>
+            {post.metadata.tags.map((tag) => (
+              <LabelBadge key={tag}>{tag}</LabelBadge>
+            ))}
+          </BadgeList>
+        )}
       </Link>
     </article>
   );

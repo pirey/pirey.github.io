@@ -2,6 +2,8 @@
 title: Tailwind CSS v4 summary
 description: Summarize changes from previous version
 date: 2025-03-01T10:31:32
+tags:
+  - tailwindcss
 ---
 
 The most notable change is in version 4, Tailwind CSS no longer use `tailwind.config.ts` configuration file.

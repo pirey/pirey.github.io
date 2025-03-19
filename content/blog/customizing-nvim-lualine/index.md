@@ -2,6 +2,8 @@
 title: Customizing nvim lualine
 date: 2023-12-31T13:41:50
 description: "How I customize nvim-lualine plugin"
+tags:
+  - neovim
 ---
 
 ## Motivation
