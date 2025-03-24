@@ -80,7 +80,7 @@ const projects: Project[] = [
     tags: ["ReactJS", "MaterialUI"],
     role: "Frontend Developer",
     roleDescription:
-      "Build the chat panel to allowed Viapulsa agents to manage and respond to customer inquiries efficiently, streamlining communication and support.",
+      "Build the chat panel to allow Viapulsa agents to manage and respond to customer inquiries efficiently, streamlining communication and support.",
     images: [
       {
         orientation: "landscape",
