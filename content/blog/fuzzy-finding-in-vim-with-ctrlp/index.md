@@ -1,7 +1,7 @@
 ---
 title: "Vim pro tips: fuzzy finding with CtrlP"
 date: 2016-08-24 23:50:40
-description: "Here you will learn to easily find files in project directory using vim using CtrlP"
+description: "Here you will learn to easily find files in project directory using vim using CtrlP."
 tags:
   - vim
 ---

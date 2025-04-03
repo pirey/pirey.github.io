@@ -1,7 +1,7 @@
 ---
 title: Docker Oversimplified
 date: 2020-12-11T16:58:49
-description: "Overly simple explanations of docker concepts"
+description: "Overly simple explanations of docker concepts."
 tags:
     - docker
 ---

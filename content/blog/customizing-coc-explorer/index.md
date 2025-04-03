@@ -1,7 +1,7 @@
 ---
 title: Customizing Coc Explorer
 date: 2020-09-23T08:31:13
-description: "Here is how I customize coc-explorer, an alternative to nerdtree"
+description: "Here is how I customize coc-explorer, an alternative to nerdtree."
 tags:
   - vim
 ---

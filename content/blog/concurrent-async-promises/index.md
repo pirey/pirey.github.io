@@ -1,7 +1,7 @@
 ---
 title: Concurrent Async Promises
 date: 2023-12-31T10:49:58
-description: "Efficient concurrent async promises handling in typescript"
+description: "Efficient concurrent async promises handling in typescript."
 tags:
   - typescript
 ---

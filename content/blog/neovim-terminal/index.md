@@ -1,7 +1,7 @@
 ---
 title: Neovim terminal
 date: 2020-12-28T10:45:12
-description: My custom setup for using built-in neovim terminal
+description: My custom setup for using built-in neovim terminal.
 tags:
     - neovim
 ---

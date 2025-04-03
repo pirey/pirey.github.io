@@ -1,6 +1,6 @@
 ---
 title: Tailwind CSS v4 summary
-description: Summarize changes from previous version
+description: Summarize changes from previous version.
 date: 2025-03-01T10:31:32
 tags:
   - tailwindcss

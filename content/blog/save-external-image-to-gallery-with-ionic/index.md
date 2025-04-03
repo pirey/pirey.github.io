@@ -1,7 +1,7 @@
 ---
 title: Save external image to gallery with ionic
 date: 2016-04-13 21:06:15
-description: Here you will learn to save external image to gallery in ionic
+description: Here you will learn to save external image to gallery in ionic.
 tags:
   - angularjs
   - cordova
