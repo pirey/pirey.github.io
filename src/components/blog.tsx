@@ -52,7 +52,6 @@ export function BlogPost({ post }: { post: PostData }) {
 }
 
 export function BlogPostItem({ post }: { post: PostData }) {
-  console.log(post);
   return (
     <article>
       <Link aria-label={post.metadata.title} href={`/blog/${post.slug}`}>

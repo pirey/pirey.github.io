@@ -4,11 +4,15 @@ import { PAGE_TITLE, patternBgImage } from "@/constants";
 import { useTheme } from "@/context/theme";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 export function TopNavBar() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+
+  const shouldShowPageTitle = pathname !== "/";
 
   const background =
     menuOpen || scrolled
@@ -56,14 +60,20 @@ export function TopNavBar() {
               src={teal}
               width={32}
               height={32}
-              alt="Teal"
+              alt={PAGE_TITLE}
               className="rounded-full"
             />
-            <h2 className="text-xl font-bold" aria-label={PAGE_TITLE}>
-              <span aria-hidden className="">
+            {shouldShowPageTitle && (
+              <h2
+                className={`
+                  hidden text-xl font-bold
+                  sm:block
+                `}
+                aria-label={PAGE_TITLE}
+              >
                 {PAGE_TITLE}
-              </span>
-            </h2>
+              </h2>
+            )}
           </Link>
           <MobileMenu onToggleMenu={() => setMenuOpen(!menuOpen)} />
           <Menu />
