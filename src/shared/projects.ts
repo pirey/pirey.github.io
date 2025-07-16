@@ -37,7 +37,10 @@ import vpChatPage from "@/assets/projects/viapulsa-chat/vp-chat-page.webp";
 import vpChatFilter from "@/assets/projects/viapulsa-chat/vp-chat-filter.webp";
 import vpChatShortcuts from "@/assets/projects/viapulsa-chat/vp-chat-shortcuts.webp";
 import vpChatLogin from "@/assets/projects/viapulsa-chat/vp-chat-login.webp";
+import klHomePage from "@/assets/projects/keenan-living/home-page.webp";
+import klDetailPage from "@/assets/projects/keenan-living/property-detail-page.webp";
 
+// clients
 import viapulsaLogo from "@/assets/project-clients/viapulsa.png";
 import maviapulsaLogo from "@/assets/project-clients/maviapulsa.png";
 import mitragamersLogo from "@/assets/project-clients/mitragamers.png";
@@ -74,6 +77,39 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "Keenan Living - Premium Urban Home Rentals",
+    description:
+      "Keenan Living is a premium home rental service offering modern, fully equipped accommodations in prime city locations.",
+    tags: ["TailwindCSS", "Laravel"],
+    role: "Frontend Developer",
+    roleDescription:
+      "I was responsible for implementing the revamped UI, translating design concepts into functional, responsive interfaces while ensuring consistency and performance across the platform.",
+    images: [
+      {
+        orientation: "portrait",
+        alt: "Home Page",
+        src: klHomePage,
+      },
+      {
+        orientation: "portrait",
+        alt: "Property Detail",
+        src: klDetailPage,
+      },
+    ],
+    slug: "keenan-living",
+    year: "2025",
+    links: [
+      {
+        label: "Keenan Living",
+        url: "https://keenanliving.com",
+      },
+    ],
+    client: {
+      name: "Keenan Living",
+      url: "https://keenanliving.com",
+    },
+  },
   {
     title: "Viapulsa Customer Chat Panel",
     description:
