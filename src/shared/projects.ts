@@ -203,7 +203,8 @@ const projects: Project[] = [
       "Platform which enable clients to sell various game topup service.",
     tags: ["ReactJS", "NextJS", "TailwindCSS"],
     role: "Frontend Developer",
-    roleDescription: "Build a customizable website for MitraGamers clients.",
+    roleDescription:
+      "I was responsible for building the frontend of a game top-up SaaS platform, including project setup and implementation of a responsive, theme-able UI based on provided designs, with a focus on usability and overall user experience.",
     images: [
       {
         orientation: "portrait",
@@ -595,7 +596,7 @@ const projects: Project[] = [
       url: "https://recordowl.com/company/next3labs-pte-ltd",
     },
   },
-].filter(item => !item.hide) as Project[];
+].filter((item) => !item.hide) as Project[];
 export const sortedProjects = projects.sort(
   (a, b) => Number(b.year) - Number(a.year),
 );
