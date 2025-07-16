@@ -45,9 +45,10 @@ export default function AboutPage() {
                 <Image
                   src={pp}
                   alt="Me"
-                  className="h-40 w-40 rounded-lg shadow-sm"
+                  className="h-40 w-40 rounded-md shadow-sm"
                 />
-                <ul className="flex gap-2 pt-8">
+                <h2 className="sm:self-start pt-8 font-medium">Available at:</h2>
+                <ul className="flex gap-2 pt-2">
                   <li>
                     <a
                       href="https://github.com/pirey"
@@ -140,7 +141,7 @@ export default function AboutPage() {
                 </div>
               </article>
 
-              <article className="pt-10">
+              <article className="pt-6">
                 <h3 className="font-bold">Work</h3>
 
                 <p className="pt-4">I have worked professionally at:</p>
