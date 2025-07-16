@@ -14,10 +14,10 @@ function ContactIcon({ children }: { children: React.ReactNode }) {
   return (
     <div
       className={`
-      border-fg-light/40 flex h-8 w-8 items-center justify-center rounded-md
-      border
-      dark:border-fg-dark/40
-    `}
+        border-fg-light/40 flex h-8 w-8 items-center justify-center rounded-md
+        border
+        dark:border-fg-dark/40
+      `}
     >
       {children}
     </div>
@@ -36,9 +36,9 @@ export default function AboutPage() {
         <div className="py-10">
           <div
             className={`
-            flex flex-col items-center gap-10
-            sm:items-start
-          `}
+              flex flex-col items-center gap-10
+              sm:items-start
+            `}
           >
             <section id="info">
               <article className="flex flex-col items-center">
@@ -47,7 +47,10 @@ export default function AboutPage() {
                   alt="Me"
                   className="h-40 w-40 rounded-md shadow-sm"
                 />
-                <h2 className="sm:self-start pt-8 font-medium">Available at:</h2>
+                <h2 className={`
+                  pt-8 font-medium
+                  sm:self-start
+                `}>Available at:</h2>
                 <ul className="flex gap-2 pt-2">
                   <li>
                     <a
@@ -98,7 +101,7 @@ export default function AboutPage() {
                 development.
               </p>
 
-              <article className="pt-10 hidden">
+              <article className="hidden pt-10">
                 <h3 className="font-bold">Tech Stack</h3>
 
                 <div className="pt-4">
