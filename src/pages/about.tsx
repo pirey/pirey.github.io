@@ -6,17 +6,19 @@ import Image from "next/image";
 import pp from "@/assets/pp.jpg";
 import { Envelope, Github, LinkedIn, Twitter } from "@/components/icons";
 import { Heading } from "@/components/heading";
-import { BadgeList, TechBadge } from "@/components/badge";
+import { BadgeList, LabelBadge, TechBadge } from "@/components/badge";
 import { PageLayout } from "@/components/layout";
 import { Footer } from "@/components/footer";
 
 function ContactIcon({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`
+    <div
+      className={`
       border-fg-light/40 flex h-8 w-8 items-center justify-center rounded-md
       border
       dark:border-fg-dark/40
-    `}>
+    `}
+    >
       {children}
     </div>
   );
@@ -32,10 +34,12 @@ export default function AboutPage() {
       <Content>
         <Heading>About Me</Heading>
         <div className="py-10">
-          <div className={`
+          <div
+            className={`
             flex flex-col items-center gap-10
             sm:items-start
-          `}>
+          `}
+          >
             <section id="info">
               <article className="flex flex-col items-center">
                 <Image
@@ -93,7 +97,7 @@ export default function AboutPage() {
                 development.
               </p>
 
-              <article className="pt-10">
+              <article className="pt-10 hidden">
                 <h3 className="font-bold">Tech Stack</h3>
 
                 <div className="pt-4">
@@ -146,12 +150,12 @@ export default function AboutPage() {
                   <li>2018-2019 WhatsHalal</li>
                   <li>2019-2021 Pener ID</li>
                   <li>2021-2024 AccelByte</li>
+                  <li>2025-Now Independent Contractor</li>
                 </ul>
 
-                <p className="pt-4">
-                  I&apos;m also available for freelance work on a project-based
-                  contract.
-                </p>
+                <div className="pt-4">
+                  <LabelBadge>I&apos;m <strong>available for hire</strong></LabelBadge>
+                </div>
               </article>
             </section>
           </div>
