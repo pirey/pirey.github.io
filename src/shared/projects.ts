@@ -70,6 +70,7 @@ export type Project = {
   }[];
   links?: { label: string; url: string }[];
   client?: ProjectClient;
+  hide?: boolean;
 };
 
 const projects: Project[] = [
@@ -250,6 +251,7 @@ const projects: Project[] = [
   },
   {
     title: "Komoditas Pasar Madiun",
+    hide: true,
     description:
       "Web portal for monitoring commodity prices in Madiun regency.",
     tags: ["Laravel", "MySQL", "TailwindCSS"],
@@ -557,7 +559,7 @@ const projects: Project[] = [
       url: "https://recordowl.com/company/next3labs-pte-ltd",
     },
   },
-];
+].filter(item => !item.hide) as Project[];
 export const sortedProjects = projects.sort(
   (a, b) => Number(b.year) - Number(a.year),
 );
