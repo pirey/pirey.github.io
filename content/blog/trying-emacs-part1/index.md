@@ -1,6 +1,6 @@
 ---
 title: Trying GNU Emacs part 1
-date: 2025-07-11.23T10:49:58
+date: 2025-07-22 10:00:08
 description: "This is my attempt to use the glorious GNU program, that is GNU Emacs."
 tags:
   - emacs
