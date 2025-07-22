@@ -54,7 +54,7 @@ The configuration is written in `Emacs Lisp`.
 
 To set an option variable we use `setq`.
 
-```elisp
+```lisp
 ; Allow scroll to top/bottom of a buffer
 (setq scroll-error-top-bottom t)
 ```
@@ -63,7 +63,7 @@ To check out help file of a variable we can use `C-h v` then enter the variable 
 
 Some of the configuration can be set by calling functions.
 
-```elisp
+```lisp
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -80,7 +80,7 @@ By default Emacs will try to download packages from gnu and nongnu repository, s
 
 We can add more repository to download packages from, for example [MELPA](https://melpa.org) is a popular one.
 
-```elisp
+```lisp
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -94,7 +94,7 @@ To install a package, we can browse available packages using `list-packages` the
 
 We can also specify it in our config file by calling the `package-install` manually. But we also need to check if they're not installed already, using `package-installed-p` function.
 
-```elisp
+```lisp
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -126,7 +126,7 @@ We can also specify it in our config file by calling the `package-install` manua
 
 We can also use the `use-package` macro to make it tidy.
 
-```elisp
+```lisp
 ;; setup packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -167,7 +167,7 @@ When we install a package, Emacs will modify and add at the end of config file w
 
 To avoid this, we can set `custom-file` variable to let emacs modify that file instead.
 
-```elisp
+```lisp
 (setq custom-file "~/.emacs-custom.el")
 ```
 
