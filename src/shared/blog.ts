@@ -113,9 +113,9 @@ export async function getPostData(slug: string) {
   const processedContent = await unified()
     .use(remarkParse)                        // parse markdown into ast
     .use(remarkRelativeAsset, { slug })      // convert relative url to static public url
-    .use(remarkRehype)                       // convert markdown ast to html ast
+    .use(remarkRehype, { allowDangerousHtml: true })                       // convert markdown ast to html ast
     .use(rehypeHighlight)                    // code block highlight using lowlight/highlight.js
-    .use(rehypeStringify)                    // to html string
+    .use(rehypeStringify, { allowDangerousHtml: true })                    // to html string
   .process(matterResult.content);
 
   const contentHtml = processedContent.toString();

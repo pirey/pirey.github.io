@@ -20,6 +20,8 @@ async function createPostAssetFoldersForCopy() {
       ".jpeg",
       ".gif",
       ".webp",
+      ".mov",
+      ".mp4",
     ];
 
     // Read all files inside current post folder
