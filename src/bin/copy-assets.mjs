@@ -24,6 +24,11 @@ async function createPostAssetFoldersForCopy() {
       ".mp4",
     ];
 
+    // only support single flat directory for now
+    // TODO: support nested recursive directory
+    const stat = await fsPromises.stat(`${postsDir}/${slug}`)
+    if (!stat.isDirectory()) continue;
+
     // Read all files inside current post folder
     const postDirFiles = await fsPromises.readdir(`${postsDir}/${slug}`);
 
