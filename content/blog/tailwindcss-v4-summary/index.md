@@ -32,5 +32,5 @@ There are set of predefined variable prefixes which they call [theme variable na
 Each prefix will generate its corresponding utility classes.
 
 ```html
-<p class="color-prime-teal font-poppins">Prime Teal</p>
+<p class="text-prime-teal font-poppins">Prime Teal</p>
 ```
