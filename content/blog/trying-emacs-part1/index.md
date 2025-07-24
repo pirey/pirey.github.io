@@ -16,15 +16,13 @@ At the time of writing this document, I'm using macOS Sequoia 15.5 on a Macbook 
 
 There are several options that we can choose to use Emacs on macOS:
 
-https://emacsformacosx.com/ - This is the simplest way to install Emacs on macOS system, just regular drag and drop to Applications folder and it's done.
+- [https://emacsformacosx.com/](https://emacsformacosx.com/) - This is the simplest way to install Emacs on macOS system, just regular drag and drop to Applications folder and it's done.
+- [Homebrew emacs](https://formulae.brew.sh/formula/emacs) - Install Emacs using homebrew.
+- [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) - This is another homebrew package but I noticed a lot of people recommended this if we want a more feature complete Emacs on macOS.
 
-[Homebrew emacs](https://formulae.brew.sh/formula/emacs) - Install Emacs using homebrew.
+I tried all of them but I don't see any major difference because I'm just getting started and have no idea of what I'm missing or not. So if we're just getting started, I believe it is safe to use any of them.
 
-[emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) - This is another homebrew package but I noticed a lot of people recommended this if we want a more feature complete Emacs on macOS.
-
-I tried all of them but I don't see any major difference because I'm just getting started and have no idea of what I'm missing or not. So if we're just getting started, I believe it is safe to use either of them.
-
-> NOTE: when I install emacs-plus, it will build emacs from source and I noticed the spike of CPU usage on my machine, it was so intense it is the first (only) time since I bought the machine that the fan start to spin real hard I started to worry.
+> NOTE: when I install emacs-plus, it builds emacs from source and I noticed the spike of CPU usage on my machine, it was so intense it is the first time (the only time?) since I bought the machine that the fan start to spin real hard I started to worry.
 > The build finished about 30 minutes or so.
 
 ## Getting Started
