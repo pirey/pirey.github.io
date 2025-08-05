@@ -154,7 +154,7 @@ export default function AboutPage() {
                   <li>2018-2019 WhatsHalal</li>
                   <li>2019-2021 Pener ID</li>
                   <li>2021-2024 AccelByte</li>
-                  <li>2025-Now Independent Contractor</li>
+                  <li>2025-Now Self-Employed</li>
                 </ul>
 
                 <div className="pt-4">
