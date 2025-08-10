@@ -40,6 +40,10 @@ import vpChatLogin from "@/assets/projects/viapulsa-chat/vp-chat-login.webp";
 import klHomePage from "@/assets/projects/keenan-living/home-page.webp";
 import klDetailPage from "@/assets/projects/keenan-living/property-detail-page.webp";
 import agsHome from "@/assets/projects/ags/ags-dashboard.webp";
+import vexagameHome from "@/assets/projects/vexagame/vexagame-home.webp";
+import vexagameJoki from "@/assets/projects/vexagame/vexagame-joki.webp";
+import vexagameTopup from "@/assets/projects/vexagame/vexagame-topup.webp";
+import vexagameAkun from "@/assets/projects/vexagame/vexagame-akun.webp";
 
 // clients
 import viapulsaLogo from "@/assets/project-clients/viapulsa.png";
@@ -50,6 +54,7 @@ import whatshalalLogo from "@/assets/project-clients/whatshalal.png";
 import idwebhostLogo from "@/assets/project-clients/idwebhost.svg";
 import jejualanLogo from "@/assets/project-clients/jejualan.png";
 import abLogo from "@/assets/project-clients/accelbyte.svg";
+import vexagameLogo from "@/assets/project-clients/vexagame-logo.webp";
 
 import { StaticImageData } from "next/image";
 
@@ -79,6 +84,50 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "VexaGame Revamp",
+    description:
+      "VexaGame is a trusted top-up platform for games and other digital products.",
+    tags: ["NextJS", "TailwindCSS", "ReactJS", "TypeScript"],
+    role: "Frontend Lead",
+    roleDescription:
+      "I led the frontend team in implementing the revamped UI, and designed and architected the project structure to ensure maintainability and scalability.",
+    images: [
+      {
+        orientation: "portrait",
+        alt: "Home Page",
+        src: vexagameHome,
+      },
+      {
+        orientation: "portrait",
+        alt: "Topup",
+        src: vexagameTopup,
+      },
+      {
+        orientation: "portrait",
+        alt: "Joki",
+        src: vexagameJoki,
+      },
+      {
+        orientation: "portrait",
+        alt: "Akun",
+        src: vexagameAkun,
+      },
+    ],
+    slug: "vexagame-revamp",
+    year: "2025",
+    links: [
+      {
+        label: "VexaGame",
+        url: "https://vexagame.com",
+      },
+    ],
+    client: {
+      name: "VexaGame",
+      url: "https://vexagame.com",
+      logo: vexagameLogo,
+    },
+  },
   {
     title: "Keenan Living - Premium Urban Home Rentals",
     description:
