@@ -39,6 +39,7 @@ import vpChatShortcuts from "@/assets/projects/viapulsa-chat/vp-chat-shortcuts.w
 import vpChatLogin from "@/assets/projects/viapulsa-chat/vp-chat-login.webp";
 import klHomePage from "@/assets/projects/keenan-living/home-page.webp";
 import klDetailPage from "@/assets/projects/keenan-living/property-detail-page.webp";
+import agsHome from "@/assets/projects/ags/ags-dashboard.webp";
 
 // clients
 import viapulsaLogo from "@/assets/project-clients/viapulsa.png";
@@ -48,6 +49,7 @@ import sintitekLogo from "@/assets/project-clients/sintitek.png";
 import whatshalalLogo from "@/assets/project-clients/whatshalal.png";
 import idwebhostLogo from "@/assets/project-clients/idwebhost.svg";
 import jejualanLogo from "@/assets/project-clients/jejualan.png";
+import abLogo from "@/assets/project-clients/accelbyte.svg";
 
 import { StaticImageData } from "next/image";
 
@@ -152,6 +154,28 @@ const projects: Project[] = [
       name: "Viapulsa",
       url: "https://viapulsa.co.id",
       logo: viapulsaLogo,
+      logoBg: "white",
+    },
+  },
+  {
+    title: "AccelByte Gaming Service",
+    description: "A comprehensive and scalable backend solution built for games and connected experiences.",
+    tags: ["ReactJS", "AntDesign", "TypeScript"],
+    role: "Frontend Developer",
+    roleDescription: "Led a small team to restructure the platform from single-tenant to multi-tenant, enabling smaller studios to access premium cloud gaming features.",
+    images: [
+      {
+        orientation: "landscape",
+        alt: "Home Dashboard",
+        src: agsHome,
+      },
+    ],
+    slug: "accelbyte-gaming-service",
+    year: "2024",
+    client: {
+      name: "AccelByte",
+      url: "https://accelbyte.io/",
+      logo: abLogo,
       logoBg: "white",
     },
   },
