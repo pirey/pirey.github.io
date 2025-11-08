@@ -47,11 +47,26 @@ export default function AboutPage() {
                   alt="Me"
                   className="h-40 w-40 rounded-md shadow-sm"
                 />
-                <h2 className={`
+                <h2
+                  className={`
                   pt-8 font-medium
                   sm:self-start
-                `}>Available at:</h2>
+                `}
+                >
+                  Contact me:
+                </h2>
                 <ul className="flex gap-2 pt-2">
+                  <li className="col">
+                    <a
+                      href="mailto:mail@yeripratama.com?subject=Hello"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ContactIcon>
+                        <Envelope />
+                      </ContactIcon>
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="https://github.com/pirey"
@@ -81,24 +96,13 @@ export default function AboutPage() {
                       </ContactIcon>
                     </a>
                   </li>
-                  <li className="col">
-                    <a
-                      href="mailto:mail@yeripratama.com?subject=Hello"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ContactIcon>
-                        <Envelope />
-                      </ContactIcon>
-                    </a>
-                  </li>
                 </ul>
               </article>
             </section>
             <section id="content">
               <p>
-                I&apos;m a software developer with a strong focus on web app
-                development.
+                I am a software developer who loves to create software that I
+                can be proud of.
               </p>
 
               <article className="hidden pt-10">
@@ -150,15 +154,17 @@ export default function AboutPage() {
                 <p className="pt-4">I have worked professionally at:</p>
 
                 <ul className="list-inside list-disc pt-4">
-                  <li>2014-2018 IDwebhost</li>
-                  <li>2018-2019 WhatsHalal</li>
-                  <li>2019-2021 Pener ID</li>
-                  <li>2021-2024 AccelByte</li>
                   <li>2025-Now Self-Employed</li>
+                  <li>2021-2024 AccelByte</li>
+                  <li>2019-2021 Pener ID</li>
+                  <li>2018-2019 WhatsHalal</li>
+                  <li>2014-2018 IDwebhost</li>
                 </ul>
 
                 <div className="pt-4">
-                  <LabelBadge>I&apos;m <strong>available for hire</strong></LabelBadge>
+                  <LabelBadge>
+                    I&apos;m <strong>available for hire</strong>
+                  </LabelBadge>
                 </div>
               </article>
             </section>
