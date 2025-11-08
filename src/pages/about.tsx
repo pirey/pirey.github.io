@@ -49,9 +49,9 @@ export default function AboutPage() {
                 />
                 <h2
                   className={`
-                  pt-8 font-medium
-                  sm:self-start
-                `}
+                    pt-8 font-medium
+                    sm:self-start
+                  `}
                 >
                   Contact me:
                 </h2>
