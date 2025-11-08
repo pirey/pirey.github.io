@@ -44,6 +44,12 @@ import vexagameHome from "@/assets/projects/vexagame/vexagame-home.webp";
 import vexagameJoki from "@/assets/projects/vexagame/vexagame-joki.webp";
 import vexagameTopup from "@/assets/projects/vexagame/vexagame-topup.webp";
 import vexagameAkun from "@/assets/projects/vexagame/vexagame-akun.webp";
+import gpdsHome from "@/assets/projects/gpdsgameshop/gpds-home.webp";
+import gpdsTopup from "@/assets/projects/gpdsgameshop/gpds-topup.webp";
+import gpdsNews from "@/assets/projects/gpdsgameshop/gpds-news.webp";
+import gpdsNewsDetail from "@/assets/projects/gpdsgameshop/gpds-news-detail.webp";
+import gpdsTrack from "@/assets/projects/gpdsgameshop/gpds-track.webp";
+import gpdsDeposit from "@/assets/projects/gpdsgameshop/gpds-deposit.webp";
 
 // clients
 import viapulsaLogo from "@/assets/project-clients/viapulsa.png";
@@ -55,6 +61,7 @@ import idwebhostLogo from "@/assets/project-clients/idwebhost.svg";
 import jejualanLogo from "@/assets/project-clients/jejualan.png";
 import abLogo from "@/assets/project-clients/accelbyte.svg";
 import vexagameLogo from "@/assets/project-clients/vexagame-logo.webp";
+import gpdsLogo from "@/assets/project-clients/gpds-logo.webp";
 
 import { StaticImageData } from "next/image";
 
@@ -84,6 +91,59 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "GPDS Game Shop",
+    description: "GPDS Game Shop is a top-up platform based in philippines.",
+    tags: ["NextJS", "TailwindCSS", "ReactJS", "TypeScript", "Laravel"],
+    role: "Fullstack Developer / Lead",
+    roleDescription:
+      "I led the team to work on the end-to-end task from backend integration with various provider and frontend UI revamp.",
+    images: [
+      {
+        orientation: "portrait",
+        alt: "Home Page",
+        src: gpdsHome,
+      },
+      {
+        orientation: "portrait",
+        alt: "Topup",
+        src: gpdsTopup,
+      },
+      {
+        orientation: "portrait",
+        alt: "News",
+        src: gpdsNews,
+      },
+      {
+        orientation: "portrait",
+        alt: "News Detail",
+        src: gpdsNewsDetail,
+      },
+      {
+        orientation: "portrait",
+        alt: "Track Invoice",
+        src: gpdsTrack,
+      },
+      {
+        orientation: "portrait",
+        alt: "Deposit Balance",
+        src: gpdsDeposit,
+      },
+    ],
+    slug: "gpdsgameshop",
+    year: "2025",
+    links: [
+      {
+        label: "GPDS Game Shop",
+        url: "https://gpdsgameshop.com",
+      },
+    ],
+    client: {
+      name: "GPDS Game Shop",
+      url: "https://gpdsgameshop.com",
+      logo: gpdsLogo,
+    },
+  },
   {
     title: "VexaGame Revamp",
     description:
@@ -208,10 +268,12 @@ const projects: Project[] = [
   },
   {
     title: "AccelByte Gaming Service",
-    description: "A comprehensive and scalable backend solution built for games and connected experiences.",
+    description:
+      "A comprehensive and scalable backend solution built for games and connected experiences.",
     tags: ["ReactJS", "AntDesign", "TypeScript"],
     role: "Frontend Developer",
-    roleDescription: "Led a small team to restructure the platform from single-tenant to multi-tenant, enabling smaller studios to access premium cloud gaming features.",
+    roleDescription:
+      "Led a small team to restructure the platform from single-tenant to multi-tenant, enabling smaller studios to access premium cloud gaming features.",
     images: [
       {
         orientation: "landscape",
