@@ -50,6 +50,13 @@ import gpdsNews from "@/assets/projects/gpdsgameshop/gpds-news.webp";
 import gpdsNewsDetail from "@/assets/projects/gpdsgameshop/gpds-news-detail.webp";
 import gpdsTrack from "@/assets/projects/gpdsgameshop/gpds-track.webp";
 import gpdsDeposit from "@/assets/projects/gpdsgameshop/gpds-deposit.webp";
+import gpdsLogin from "@/assets/projects/gpdsgameshop/gpds-login.webp";
+import revolixgamingHome from "@/assets/projects/revolixgaming/revolixgaming-home.webp";
+import revolixgamingTopup from "@/assets/projects/revolixgaming/revolixgaming-topup.webp";
+import revolixgamingInvoice from "@/assets/projects/revolixgaming/revolixgaming-invoice.webp";
+import revolixgamingDashboard from "@/assets/projects/revolixgaming/revolixgaming-dashboard.webp";
+import revolixgamingLogin from "@/assets/projects/revolixgaming/revolixgaming-login.webp";
+import revolixgamingMulti from "@/assets/projects/revolixgaming/revolixgaming-multi.webp";
 
 // clients
 import viapulsaLogo from "@/assets/project-clients/viapulsa.png";
@@ -62,6 +69,7 @@ import jejualanLogo from "@/assets/project-clients/jejualan.png";
 import abLogo from "@/assets/project-clients/accelbyte.svg";
 import vexagameLogo from "@/assets/project-clients/vexagame-logo.webp";
 import gpdsLogo from "@/assets/project-clients/gpds-logo.webp";
+import revolixgamingLogo from "@/assets/project-clients/revolixgaming-logo.webp";
 
 import { StaticImageData } from "next/image";
 
@@ -91,6 +99,60 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "Revolix Gaming",
+    description:
+      "Revolix Gaming is a top-up platform with multi currency and language support.",
+    tags: ["NextJS", "TailwindCSS", "ReactJS", "TypeScript", "Laravel"],
+    role: "Fullstack Developer / Lead",
+    roleDescription:
+      "I led the team to work on the end-to-end task from backend integration with various provider and frontend UI revamp.",
+    images: [
+      {
+        orientation: "portrait",
+        alt: "Home Page",
+        src: revolixgamingHome,
+      },
+      {
+        orientation: "portrait",
+        alt: "Topup",
+        src: revolixgamingTopup,
+      },
+      {
+        orientation: "portrait",
+        alt: "Invoice",
+        src: revolixgamingInvoice,
+      },
+      {
+        orientation: "portrait",
+        alt: "Member Login",
+        src: revolixgamingLogin,
+      },
+      {
+        orientation: "portrait",
+        alt: "Member Dashboard",
+        src: revolixgamingDashboard,
+      },
+      {
+        orientation: "portrait",
+        alt: "Multi Currency",
+        src: revolixgamingMulti,
+      },
+    ],
+    slug: "revolixgaming",
+    year: "2025",
+    links: [
+      {
+        label: "Revolix Gaming",
+        url: "https://revolixgaming.com",
+      },
+    ],
+    client: {
+      name: "Revolix Gaming",
+      url: "https://revolixgaming.com",
+      logo: revolixgamingLogo,
+    },
+  },
   {
     title: "GPDS Game Shop",
     description: "GPDS Game Shop is a top-up platform based in philippines.",
@@ -123,6 +185,11 @@ const projects: Project[] = [
         orientation: "portrait",
         alt: "Track Invoice",
         src: gpdsTrack,
+      },
+      {
+        orientation: "portrait",
+        alt: "Member Login",
+        src: gpdsLogin,
       },
       {
         orientation: "portrait",
