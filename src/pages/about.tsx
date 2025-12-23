@@ -45,7 +45,7 @@ export default function AboutPage() {
                 <Image
                   src={pp}
                   alt="Me"
-                  className="h-40 w-40 rounded-md shadow-sm"
+                  className="h-40 w-40 rounded shadow-sm"
                 />
                 <h2
                   className={`
@@ -101,8 +101,7 @@ export default function AboutPage() {
             </section>
             <section id="content">
               <p>
-                I am a software developer who loves to create software that I
-                can be proud of.
+                I’m a software engineer with experience contributing to and maintaining production systems, including multi-tenant platforms and developer tooling. I’ve worked on live-service gaming and SaaS products, collaborated with global teams, and partnered closely with clients to deliver practical, maintainable solutions used in production.
               </p>
 
               <article className="hidden pt-10">
@@ -149,8 +148,6 @@ export default function AboutPage() {
               </article>
 
               <article className="pt-6">
-                <h3 className="font-bold">Work</h3>
-
                 <p className="pt-4">I have worked professionally at:</p>
 
                 <ul className="list-inside list-disc pt-4">
