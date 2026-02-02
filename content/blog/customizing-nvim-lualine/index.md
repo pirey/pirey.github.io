@@ -71,6 +71,33 @@ local function insert_right(component)
 end
 ```
 
+Lualine allows us to specify conditions to show or hide components, so here's some helper functions to do that.
+
+```lua
+local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
+  end,
+  buffer_empty = function()
+    return vim.fn.empty(vim.fn.expand("%:t")) == 1
+  end,
+  screen_width = function(min_w)
+    return function()
+      return vim.o.columns > min_w
+    end
+  end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand("%:p:h")
+    local gitdir = vim.fn.finddir(".git", filepath .. ";")
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
+  end,
+  diff_mode = function()
+    return vim.o.diff == true
+  end,
+  -- ... other conditions
+}
+```
+
 We can start using the function to add desired component accordingly.
 
 Here's the components on the left side.
@@ -90,7 +117,7 @@ insert_left({
     modified = { fg = colors.orange },
     removed = { fg = colors.red },
   },
-  cond = conditions.hide_in_width,
+  cond = conditions.screen_width(80),
 })
 
 insert_left({
