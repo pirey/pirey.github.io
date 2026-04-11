@@ -176,4 +176,4 @@ And here's the final result.
 
 ![the final result](the-final-result.png)
 
-Find my full neovim configuration in [the repo](https://github.com/pirey/nvim).
+Find my full neovim configuration in [the repo](https://github.com/pirey/dotfiles/home/.config/nvim).
