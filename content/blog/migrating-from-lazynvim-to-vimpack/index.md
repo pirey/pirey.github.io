@@ -78,15 +78,13 @@ vim.pack.add({
 })
 
 -- separate section for plugin configuration
-setup(function()
-  vim.g.db_ui_execute_on_save = 0
-  vim.api.nvim_create_autocmd("FileType", {
+vim.g.db_ui_execute_on_save = 0
+vim.api.nvim_create_autocmd("FileType", {
     pattern = { "sql", "mysql", "plsql" },
     callback = function()
-      vim.keymap.set("n", "<leader>s", "<Plug>(DBUI_ExecuteQuery)<Cmd>write<CR>", { silent = true })
+        vim.keymap.set("n", "<leader>s", "<Plug>(DBUI_ExecuteQuery)<Cmd>write<CR>", { silent = true })
     end,
-  })
-end)
+})
 ```
 
 The key difference is that the src field is a full URL to the plugin source, and we must configure the plugin separately outside of the plugin spec, which makes it not as modular.
@@ -179,6 +177,13 @@ end
 Finally, we can use the setup_specs function to install and configure the plugins:
 
 ```lua
+local dadbod_ui = {
+    src = "...",
+    config = function()
+        -- spec configuration
+    end
+}
+
 setup_specs({
   dadbod_ui,
   other_plugin,
